@@ -52,6 +52,7 @@ export const navItems: NavItem[] = [
 
 export const heroData = {
   name: "Your Name",
+  preferredName: "Salman", // Added preferred name
   title: "Software Engineer | Web Developer | Tech Enthusiast",
   subtitle: "Building beautiful and functional web applications.",
   ctaText: "Get In Touch",
@@ -164,5 +165,5 @@ export const contactData = {
 };
 
 export const footerData = {
-  text: `© ${new Date().getFullYear()} Your Name. Built with Next.js and Tailwind CSS.`
+  text: `© ${new Date().getFullYear()} ${heroData.preferredName || heroData.name}. Built with Next.js and Tailwind CSS.` // Use preferred name if available
 }

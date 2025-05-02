@@ -3,15 +3,19 @@ import { Inter } from 'next/font/google'; // Using Inter for a clean look
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from "@/components/ui/toaster" // Import Toaster
+import { heroData } from '@/lib/data'; // Import heroData
 
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-sans',
 });
 
+// Use preferred name for title if available
+const displayName = heroData.preferredName || heroData.name;
+
 export const metadata: Metadata = {
-  title: 'Salman - Portfolio', // Changed title here
-  description: 'A personal portfolio website showcasing skills and experience.', // Updated description
+  title: `${displayName} - Portfolio`, // Use display name in title
+  description: `Personal portfolio website for ${displayName} showcasing skills and experience.`, // Updated description
 };
 
 export default function RootLayout({

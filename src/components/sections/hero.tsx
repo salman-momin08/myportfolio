@@ -8,7 +8,10 @@ export function HeroSection() {
     <AnimatedSection id="home" className="min-h-screen flex items-center justify-center text-center bg-gradient-to-b from-background via-background to-muted/30">
       <div className="space-y-6">
         <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-foreground animate-scroll">
-          Hi, I'm <span className="text-primary">{heroData.name}</span>
+          Hi, I'm <span className="text-primary">{heroData.preferredName || heroData.name}</span>
+          {heroData.preferredName && heroData.preferredName !== heroData.name && (
+            <span className="text-2xl text-muted-foreground ml-2">({heroData.name})</span>
+          )}
         </h1>
         <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl animate-scroll" style={{ animationDelay: '100ms' }}>
           {heroData.title}

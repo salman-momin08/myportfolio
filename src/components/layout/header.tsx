@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, Mountain } from 'lucide-react';
-import { navItems } from '@/lib/data';
+import { navItems, heroData } from '@/lib/data'; // Import heroData
 import type { NavItem } from '@/lib/data';
 import { cn } from '@/lib/utils';
 
@@ -44,6 +44,8 @@ export function Header() {
     setIsMobileMenuOpen(false);
   };
 
+  const displayName = heroData.preferredName || heroData.name; // Use preferred name if available
+
   return (
     <header
       className={cn(
@@ -54,7 +56,7 @@ export function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="#home" className="flex items-center gap-2" prefetch={false}>
           <Mountain className="h-6 w-6 text-primary" />
-          <span className="text-lg font-semibold text-foreground">Salman</span> {/* Changed name here */}
+          <span className="text-lg font-semibold text-foreground">{displayName}</span> {/* Display preferred name */}
         </Link>
 
         {/* Desktop Navigation */}
