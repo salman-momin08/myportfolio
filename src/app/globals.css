@@ -5,76 +5,76 @@
 @layer base {
   :root {
     --background: 240 10% 3.9%; /* Very Dark Blue/Near Black */
-    --foreground: 0 0% 98%; /* White/Light Gray */
+    --foreground: 204 17% 93%; /* Light Gray (#ECF0F1) */
 
-    --card: 240 10% 10%; /* Dark Gray */
-    --card-foreground: 0 0% 98%; /* White/Light Gray */
+    --card: 210 29% 15%; /* Darker Blue (Derived from #2C3E50) */
+    --card-foreground: 204 17% 93%; /* Light Gray (#ECF0F1) */
 
     --popover: 240 10% 3.9%; /* Very Dark Blue/Near Black */
-    --popover-foreground: 0 0% 98%; /* White/Light Gray */
+    --popover-foreground: 204 17% 93%; /* Light Gray (#ECF0F1) */
 
-    --primary: 262 84% 58%; /* Bright Purple */
-    --primary-foreground: 0 0% 98%; /* White */
+    --primary: 205 68% 53%; /* Sky Blue (#3498DB) */
+    --primary-foreground: 210 29% 15%; /* Dark Blue Text (#2C3E50 adjusted) */
 
-    --secondary: 240 5% 15%; /* Slightly Lighter Dark Gray */
-    --secondary-foreground: 0 0% 90%; /* Light Gray */
+    --secondary: 210 29% 24%; /* Dark Blue (#2C3E50) */
+    --secondary-foreground: 204 17% 93%; /* Light Gray (#ECF0F1) */
 
-    --muted: 240 5% 20%; /* Muted Dark Gray */
-    --muted-foreground: 240 5% 65%; /* Muted Light Gray */
+    --muted: 210 20% 30%; /* Muted Dark Blue */
+    --muted-foreground: 210 15% 65%; /* Muted Light Gray/Blue */
 
-    --accent: 330 80% 60%; /* Bright Pink */
-    --accent-foreground: 0 0% 98%; /* White */
+    --accent: 205 68% 65%; /* Lighter Sky Blue */
+    --accent-foreground: 210 29% 15%; /* Dark Blue Text (#2C3E50 adjusted) */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%; /* Default Red */
+    --destructive-foreground: 0 0% 98%; /* Default White */
 
-    --border: 240 5% 18%; /* Subtle Border */
-    --input: 240 5% 18%; /* Subtle Border */
-    --ring: 262 84% 58%; /* Bright Purple */
+    --border: 210 29% 18%; /* Dark Blue Border */
+    --input: 210 29% 18%; /* Dark Blue Input */
+    --ring: 205 68% 53%; /* Sky Blue (#3498DB) */
 
     --radius: 0.5rem;
 
-    --chart-1: 262 84% 58%; /* Bright Purple */
-    --chart-2: 330 80% 60%; /* Bright Pink */
-    --chart-3: 240 5% 65%; /* Muted Light Gray */
-    --chart-4: 0 0% 90%; /* Light Gray */
-    --chart-5: 0 0% 98%; /* White/Light Gray */
+    --chart-1: 205 68% 53%; /* Primary Blue */
+    --chart-2: 210 29% 40%; /* Medium Blue */
+    --chart-3: 210 15% 65%; /* Muted Light Gray/Blue */
+    --chart-4: 204 17% 80%; /* Lighter Gray */
+    --chart-5: 204 17% 93%; /* Lightest Gray/Foreground */
   }
 
   .dark {
     --background: 240 10% 3.9%; /* Very Dark Blue/Near Black */
-    --foreground: 0 0% 98%; /* White/Light Gray */
+    --foreground: 204 17% 93%; /* Light Gray (#ECF0F1) */
 
-    --card: 240 10% 10%; /* Dark Gray */
-    --card-foreground: 0 0% 98%; /* White/Light Gray */
+    --card: 210 29% 15%; /* Darker Blue (Derived from #2C3E50) */
+    --card-foreground: 204 17% 93%; /* Light Gray (#ECF0F1) */
 
     --popover: 240 10% 3.9%; /* Very Dark Blue/Near Black */
-    --popover-foreground: 0 0% 98%; /* White/Light Gray */
+    --popover-foreground: 204 17% 93%; /* Light Gray (#ECF0F1) */
 
-    --primary: 262 84% 58%; /* Bright Purple */
-    --primary-foreground: 0 0% 98%; /* White */
+    --primary: 205 68% 53%; /* Sky Blue (#3498DB) */
+    --primary-foreground: 210 29% 15%; /* Dark Blue Text (#2C3E50 adjusted) */
 
-    --secondary: 240 5% 15%; /* Slightly Lighter Dark Gray */
-    --secondary-foreground: 0 0% 90%; /* Light Gray */
+    --secondary: 210 29% 24%; /* Dark Blue (#2C3E50) */
+    --secondary-foreground: 204 17% 93%; /* Light Gray (#ECF0F1) */
 
-    --muted: 240 5% 20%; /* Muted Dark Gray */
-    --muted-foreground: 240 5% 65%; /* Muted Light Gray */
+    --muted: 210 20% 30%; /* Muted Dark Blue */
+    --muted-foreground: 210 15% 65%; /* Muted Light Gray/Blue */
 
-    --accent: 330 80% 60%; /* Bright Pink */
-    --accent-foreground: 0 0% 98%; /* White */
+    --accent: 205 68% 65%; /* Lighter Sky Blue */
+    --accent-foreground: 210 29% 15%; /* Dark Blue Text (#2C3E50 adjusted) */
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%; /* Darker Red for Dark Mode */
+    --destructive-foreground: 0 0% 98%; /* Default White */
 
-    --border: 240 5% 18%; /* Subtle Border */
-    --input: 240 5% 18%; /* Subtle Border */
-    --ring: 262 84% 58%; /* Bright Purple */
+    --border: 210 29% 18%; /* Dark Blue Border */
+    --input: 210 29% 18%; /* Dark Blue Input */
+    --ring: 205 68% 53%; /* Sky Blue (#3498DB) */
 
-    --chart-1: 262 84% 58%; /* Bright Purple */
-    --chart-2: 330 80% 60%; /* Bright Pink */
-    --chart-3: 240 5% 65%; /* Muted Light Gray */
-    --chart-4: 0 0% 90%; /* Light Gray */
-    --chart-5: 0 0% 98%; /* White/Light Gray */
+    --chart-1: 205 68% 53%; /* Primary Blue */
+    --chart-2: 210 29% 40%; /* Medium Blue */
+    --chart-3: 210 15% 65%; /* Muted Light Gray/Blue */
+    --chart-4: 204 17% 80%; /* Lighter Gray */
+    --chart-5: 204 17% 93%; /* Lightest Gray/Foreground */
   }
 }
 
