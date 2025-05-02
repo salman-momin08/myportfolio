@@ -18,13 +18,14 @@ export function AboutSection() {
           ))}
         </div>
         <div className="flex justify-center animate-scroll" style={{ animationDelay: '200ms' }}>
+           {/* User should replace this src with their portrait image URL */}
            <Image
               src="https://picsum.photos/400/400"
-              alt="About Me Image"
+              alt="About Me Image - Replace with your portrait"
               width={400}
               height={400}
-              className="rounded-lg shadow-lg object-cover"
-              data-ai-hint="professional portrait developer"
+              className="rounded-lg shadow-lg object-cover aspect-square" // Ensure aspect ratio is square
+              data-ai-hint="professional portrait developer headshot" // Updated hint
             />
         </div>
       </div>
