@@ -10,8 +10,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'AnimatedFolio - Portfolio',
-  description: 'An animated portfolio showcasing skills and experience.',
+  title: 'Salman - Portfolio', // Changed title here
+  description: 'A personal portfolio website showcasing skills and experience.', // Updated description
 };
 
 export default function RootLayout({
