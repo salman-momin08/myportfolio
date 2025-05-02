@@ -154,13 +154,13 @@ export const educationData: EducationItem[] = [
     period: '2020 - 2024', // Replace with actual dates
     icon: GraduationCap,
   },
-  // Remove M.S. if not applicable or keep if relevant
-  // {
-  //   institution: 'State College',
-  //   degree: 'B.S. in Software Engineering',
-  //   period: '2012 - 2016',
-  //   icon: GraduationCap,
-  // },
+  // Add M.S. if applicable
+   {
+    institution: 'Graduate University Name', // Replace with actual university
+    degree: 'M.S. in Data Science', // Replace with actual degree
+    period: '2024 - Present', // Replace with actual dates or expected graduation
+    icon: GraduationCap,
+  },
 ];
 
 export const contactData = {
@@ -176,3 +176,4 @@ export const contactData = {
 export const footerData = {
   text: `© ${new Date().getFullYear()} ${heroData.preferredName || heroData.name}. Built with Next.js and Tailwind CSS.`
 }
+
