@@ -5,13 +5,13 @@ import { AnimatedSection } from '@/components/animated-section';
 
 export function ExperienceSection() {
   return (
-    <AnimatedSection id="experience" className="bg-muted/30">
+    <AnimatedSection id="experience" className="bg-secondary"> {/* Changed background to secondary */}
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-primary animate-scroll">
           Journey So Far {/* Changed heading */}
         </h2>
         {experienceData.length > 0 ? (
-          <div className="relative space-y-12 before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary before:to-transparent md:before:mx-auto md:before:ml-0">
+          <div className="relative space-y-12 before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary before:to-transparent md:before:mx-auto md:before:ml-0 before:bg-border"> {/* Adjusted gradient line */}
             {experienceData.map((item: ExperienceItem, index) => (
               <div
                 key={index}
@@ -27,7 +27,7 @@ export function ExperienceSection() {
                 </div>
 
                 {/* Card */}
-                <Card className={`relative w-full max-w-md ml-12 md:ml-0 ${experienceData.length === 1 ? '' : 'md:odd:mr-10 md:even:ml-10'}`}>
+                <Card className={`relative w-full max-w-md ml-12 md:ml-0 ${experienceData.length === 1 ? '' : 'md:odd:mr-10 md:even:ml-10'} bg-card shadow-lg`}> {/* Added explicit bg-card and shadow */}
                   <CardHeader>
                     <CardTitle className="text-lg font-semibold text-foreground">{item.role}</CardTitle>
                     <CardDescription className="text-sm text-muted-foreground">

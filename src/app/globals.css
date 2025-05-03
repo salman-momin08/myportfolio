@@ -4,77 +4,80 @@
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%; /* Very Dark Blue/Near Black */
-    --foreground: 204 17% 93%; /* Light Gray (#ECF0F1) */
+    --background: 0 0% 100%; /* White */
+    --foreground: 222.2 84% 4.9%; /* Dark Blue/Near Black */
 
-    --card: 210 29% 15%; /* Darker Blue (Derived from #2C3E50) */
-    --card-foreground: 204 17% 93%; /* Light Gray (#ECF0F1) */
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 222.2 84% 4.9%; /* Dark Blue/Near Black */
 
-    --popover: 240 10% 3.9%; /* Very Dark Blue/Near Black */
-    --popover-foreground: 204 17% 93%; /* Light Gray (#ECF0F1) */
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 222.2 84% 4.9%; /* Dark Blue/Near Black */
 
-    --primary: 205 68% 53%; /* Sky Blue (#3498DB) */
-    --primary-foreground: 210 29% 15%; /* Dark Blue Text (#2C3E50 adjusted) */
+    /* Using the user's previously requested colors */
+    --primary: 210 29% 24%; /* Dark Blue (#2C3E50) */
+    --primary-foreground: 210 40% 98%; /* Almost White/Light Gray */
 
-    --secondary: 210 29% 24%; /* Dark Blue (#2C3E50) */
-    --secondary-foreground: 204 17% 93%; /* Light Gray (#ECF0F1) */
+    --secondary: 210 40% 96.1%; /* Light Gray (#ECF0F1) */
+    --secondary-foreground: 210 29% 24%; /* Dark Blue (#2C3E50) */
 
-    --muted: 210 20% 30%; /* Muted Dark Blue */
-    --muted-foreground: 210 15% 65%; /* Muted Light Gray/Blue */
+    --muted: 210 40% 96.1%; /* Light Gray */
+    --muted-foreground: 215.4 16.3% 46.9%; /* Medium Gray */
 
-    --accent: 205 68% 65%; /* Lighter Sky Blue */
-    --accent-foreground: 210 29% 15%; /* Dark Blue Text (#2C3E50 adjusted) */
+    --accent: 205 68% 53%; /* Sky Blue (#3498DB) */
+    --accent-foreground: 210 40% 98%; /* Almost White/Light Gray */
 
     --destructive: 0 84.2% 60.2%; /* Default Red */
     --destructive-foreground: 0 0% 98%; /* Default White */
 
-    --border: 210 29% 18%; /* Dark Blue Border */
-    --input: 210 29% 18%; /* Dark Blue Input */
+    --border: 214.3 31.8% 91.4%; /* Light Gray Border */
+    --input: 214.3 31.8% 91.4%; /* Light Gray Input Border */
     --ring: 205 68% 53%; /* Sky Blue (#3498DB) */
 
     --radius: 0.5rem;
 
-    --chart-1: 205 68% 53%; /* Primary Blue */
-    --chart-2: 210 29% 40%; /* Medium Blue */
-    --chart-3: 210 15% 65%; /* Muted Light Gray/Blue */
-    --chart-4: 204 17% 80%; /* Lighter Gray */
-    --chart-5: 204 17% 93%; /* Lightest Gray/Foreground */
+    /* Adjusted chart colors for light theme */
+    --chart-1: 205 68% 53%; /* Accent Blue (#3498DB) */
+    --chart-2: 210 29% 24%; /* Primary Dark Blue (#2C3E50) */
+    --chart-3: 0 84.2% 60.2%; /* Destructive Red */
+    --chart-4: 215.4 16.3% 56.9%; /* Darker Muted Gray */
+    --chart-5: 222.2 84% 4.9%; /* Foreground Dark */
   }
 
   .dark {
-    --background: 240 10% 3.9%; /* Very Dark Blue/Near Black */
-    --foreground: 204 17% 93%; /* Light Gray (#ECF0F1) */
+    /* Make dark theme same as light theme for now */
+    --background: 0 0% 100%; /* White */
+    --foreground: 222.2 84% 4.9%; /* Dark Blue/Near Black */
 
-    --card: 210 29% 15%; /* Darker Blue (Derived from #2C3E50) */
-    --card-foreground: 204 17% 93%; /* Light Gray (#ECF0F1) */
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 222.2 84% 4.9%; /* Dark Blue/Near Black */
 
-    --popover: 240 10% 3.9%; /* Very Dark Blue/Near Black */
-    --popover-foreground: 204 17% 93%; /* Light Gray (#ECF0F1) */
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 222.2 84% 4.9%; /* Dark Blue/Near Black */
 
-    --primary: 205 68% 53%; /* Sky Blue (#3498DB) */
-    --primary-foreground: 210 29% 15%; /* Dark Blue Text (#2C3E50 adjusted) */
+    --primary: 210 29% 24%; /* Dark Blue (#2C3E50) */
+    --primary-foreground: 210 40% 98%; /* Almost White/Light Gray */
 
-    --secondary: 210 29% 24%; /* Dark Blue (#2C3E50) */
-    --secondary-foreground: 204 17% 93%; /* Light Gray (#ECF0F1) */
+    --secondary: 210 40% 96.1%; /* Light Gray (#ECF0F1) */
+    --secondary-foreground: 210 29% 24%; /* Dark Blue (#2C3E50) */
 
-    --muted: 210 20% 30%; /* Muted Dark Blue */
-    --muted-foreground: 210 15% 65%; /* Muted Light Gray/Blue */
+    --muted: 210 40% 96.1%; /* Light Gray */
+    --muted-foreground: 215.4 16.3% 46.9%; /* Medium Gray */
 
-    --accent: 205 68% 65%; /* Lighter Sky Blue */
-    --accent-foreground: 210 29% 15%; /* Dark Blue Text (#2C3E50 adjusted) */
+    --accent: 205 68% 53%; /* Sky Blue (#3498DB) */
+    --accent-foreground: 210 40% 98%; /* Almost White/Light Gray */
 
-    --destructive: 0 62.8% 30.6%; /* Darker Red for Dark Mode */
+    --destructive: 0 72.2% 50.6%; /* Slightly darker red for dark */
     --destructive-foreground: 0 0% 98%; /* Default White */
 
-    --border: 210 29% 18%; /* Dark Blue Border */
-    --input: 210 29% 18%; /* Dark Blue Input */
+    --border: 214.3 31.8% 91.4%; /* Light Gray Border */
+    --input: 214.3 31.8% 91.4%; /* Light Gray Input Border */
     --ring: 205 68% 53%; /* Sky Blue (#3498DB) */
 
-    --chart-1: 205 68% 53%; /* Primary Blue */
-    --chart-2: 210 29% 40%; /* Medium Blue */
-    --chart-3: 210 15% 65%; /* Muted Light Gray/Blue */
-    --chart-4: 204 17% 80%; /* Lighter Gray */
-    --chart-5: 204 17% 93%; /* Lightest Gray/Foreground */
+    --chart-1: 205 68% 53%;
+    --chart-2: 210 29% 24%;
+    --chart-3: 0 72.2% 50.6%;
+    --chart-4: 215.4 16.3% 56.9%;
+    --chart-5: 222.2 84% 4.9%;
   }
 }
 

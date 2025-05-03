@@ -5,7 +5,7 @@ import { AnimatedSection } from '@/components/animated-section';
 
 export function HeroSection() {
   return (
-    <AnimatedSection id="home" className="min-h-screen flex items-center justify-center text-center bg-gradient-to-b from-background via-background to-muted/30">
+    <AnimatedSection id="home" className="min-h-screen flex items-center justify-center text-center bg-gradient-to-b from-background via-background to-secondary"> {/* Changed gradient end color */}
       <div className="space-y-6">
         <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-foreground animate-scroll">
           Hi, I'm <span className="text-primary">{heroData.preferredName || heroData.name}</span>

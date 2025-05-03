@@ -28,7 +28,7 @@ export default function RootLayout({
       <head />
       <body
         className={cn(
-          'min-h-screen bg-background font-sans antialiased dark', // Apply dark theme by default
+          'min-h-screen bg-background font-sans antialiased', // Removed 'dark' class
           inter.variable
         )}
       >

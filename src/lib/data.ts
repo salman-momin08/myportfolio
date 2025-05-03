@@ -52,8 +52,8 @@ export const navItems: NavItem[] = [
 
 export const heroData = {
   name: "Salman", // Updated name
-  preferredName: "Salman", // Kept preferred name consistent
-  title: "Aspiring Software Engineer | Web Developer | Tech Enthusiast", // Adjusted title for fresher
+  preferredName: "Khwajamainuddin", // Kept preferred name consistent
+  title: "Aspiring Software Engineer | Web Developer | Tech Enthusiast | GenAI Enthusiast", // Adjusted title for fresher
   subtitle: "Eager to build beautiful and functional web applications and kickstart my career.", // Adjusted subtitle for fresher
   ctaText: "Get In Touch",
   ctaLink: "#contact",
@@ -84,37 +84,37 @@ export const experienceData: ExperienceItem[] = [
   },
   // Add internships or significant volunteer work here if applicable
   // Example:
-  // {
-  //   company: 'Open Source Project X',
-  //   role: 'Contributor',
-  //   period: 'Summer 2023',
-  //   description: [
-  //     'Contributed features A and B to the project.',
-  //     'Fixed bugs C and D.',
-  //     'Collaborated with the community via GitHub issues and PRs.',
-  //   ],
-  //   icon: Github,
-  // },
+  {
+    company: 'Leosias Technologies',
+    role: 'Data Analyst',
+    period: 'Nov 2024 - Jan 2025',
+    description: [
+      'Contributed features A and B to the project.',
+      'Fixed bugs C and D.',
+      'Collaborated with the community via GitHub issues and PRs.',
+    ],
+    icon: Github,
+  },
 ];
 
 
 export const projectsData: ProjectItem[] = [
   {
-    title: 'E-commerce Platform',
+    title: 'Online Cake Shop',
     description: 'A full-featured e-commerce website built with Next.js, Stripe, and Firebase. Demonstrates full-stack capabilities.', // Added context
     tags: ['Next.js', 'React', 'TypeScript', 'Stripe', 'Firebase', 'Full-Stack'],
     link: 'https://github.com/yourusername/ecommerce', // Replace with actual link
     icon: FolderKanban,
   },
   {
-    title: 'Task Management App',
+    title: 'Face Recognition System',
     description: 'A collaborative task management application using MERN stack. Showcases API development and database integration.', // Added context
     tags: ['MongoDB', 'Express', 'React', 'Node.js', 'MERN'],
     link: 'https://github.com/yourusername/task-manager', // Replace with actual link
     icon: FolderKanban,
   },
   {
-    title: 'Portfolio Website',
+    title: 'ResearchSphere',
     description: 'This very portfolio website, built with Next.js and Tailwind CSS to showcase my skills and projects.', // Added context
     tags: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript', 'Shadcn/ui'],
     // No link needed as it's the current site
@@ -125,13 +125,18 @@ export const projectsData: ProjectItem[] = [
 
 export const skillsData: SkillCategory[] = [
   {
+    title: 'Programming Languages',
+    skills: ['Pyhton', 'Java', 'Javascript', 'C programming'],
+    icon: Code,
+  },
+  {
     title: 'Frontend',
-    skills: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Shadcn/ui'], // Removed Vue.js unless applicable
+    skills: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'Tailwind CSS'],
     icon: Code,
   },
   {
     title: 'Backend',
-    skills: ['Node.js', 'Express', 'REST APIs'], // Simplified for a fresher, remove Python/Django/Flask/GraphQL unless applicable
+    skills: ['Node.js', 'Express', 'REST APIs'], 
     icon: Code,
   },
   {
@@ -141,24 +146,29 @@ export const skillsData: SkillCategory[] = [
   },
   {
     title: 'Tools & Concepts', // Renamed category
-    skills: ['Git', 'Docker', 'AWS (Basic)', 'Google Cloud (Basic)', 'CI/CD (Concepts)', 'Jest', 'Testing Library'], // Adjusted for fresher level
+    skills: ['Git', 'Docker', 'AWS (Basic)', 'Google Cloud (Basic)', 'CI/CD (Concepts)'], // Adjusted for fresher level
     icon: Wrench,
+  },
+  {
+    title: 'Others',
+    skills: ['GenAI', 'Prompt Engineering', 'Data Structures', 'Algorithms', 'Excellent Communication', 'Leadership', 'Time Management'],
+    icon: Code,
   },
 ];
 
 export const educationData: EducationItem[] = [
    // Keep relevant education
    {
-    institution: 'University of Technology', // Replace with actual university
-    degree: 'B.S. in Computer Science', // Replace with actual degree
-    period: '2020 - 2024', // Replace with actual dates
+    institution: 'KLE SOCIETYS COLLEGE OF BCA GOKAK', 
+    degree: 'Bachelor of Computer Application (BCA)', 
+    period: '2020 - 2023', 
     icon: GraduationCap,
   },
   // Add M.S. if applicable
    {
-    institution: 'Graduate University Name', // Replace with actual university
-    degree: 'M.S. in Data Science', // Replace with actual degree
-    period: '2024 - Present', // Replace with actual dates or expected graduation
+    institution: 'The Oxford College of Engineering', // Replace with actual university
+    degree: 'Master of Computer Application (MCA)', // Replace with actual degree
+    period: '2023 - Present', // Replace with actual dates or expected graduation
     icon: GraduationCap,
   },
 ];
@@ -174,6 +184,6 @@ export const contactData = {
 };
 
 export const footerData = {
-  text: `© ${new Date().getFullYear()} ${heroData.preferredName || heroData.name}. Built with Next.js and Tailwind CSS.`
+  text: `© ${new Date().getFullYear()} ${heroData.preferredName || heroData.name}. `
 }
 

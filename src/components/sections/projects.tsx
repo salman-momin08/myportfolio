@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Github } from 'lucide-react';
 import { AnimatedSection } from '@/components/animated-section';
+import { cn } from '@/lib/utils'; // Import cn
 
 export function ProjectsSection() {
   return (
@@ -32,9 +33,10 @@ export function ProjectsSection() {
                   </div>
                 {project.link && (
                     <Button asChild variant="outline" size="sm" className="mt-auto self-start">
-                         <Link href={project.link} target="_blank" rel="noopener noreferrer">
-                            <Github className="mr-2 h-4 w-4" />
-                            View Code
+                         {/* Ensured Link has flex items-center for consistency */}
+                         <Link href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center">
+                           <Github className="mr-2 h-4 w-4" />
+                           View Code
                          </Link>
                     </Button>
                 )}
