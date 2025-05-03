@@ -26,6 +26,7 @@ export function AboutSection() {
               height={400}
               className="rounded-lg shadow-lg object-cover aspect-square" // Ensure aspect ratio is square
               data-ai-hint="professional portrait developer headshot" // Updated hint
+              priority // Added priority for potential LCP improvement
             />
         </div>
       </div>
