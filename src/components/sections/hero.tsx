@@ -18,7 +18,7 @@ export function HeroSection() {
     if (displayedPrimaryName.length < primaryName.length) {
       const timeoutId = setTimeout(() => {
         setDisplayedPrimaryName(primaryName.substring(0, displayedPrimaryName.length + 1));
-      }, 120); // Typing speed in milliseconds
+      }, 200); // Typing speed in milliseconds - Increased from 120ms to 200ms
       return () => clearTimeout(timeoutId);
     } else {
       setIsPrimaryTypingComplete(true);
@@ -55,3 +55,4 @@ export function HeroSection() {
     </AnimatedSection>
   );
 }
+
