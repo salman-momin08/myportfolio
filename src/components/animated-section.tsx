@@ -21,8 +21,8 @@ export function AnimatedSection({
   id,
   children,
   className,
-  // Provide default observer options
-  observerOptions = { threshold: 0.1, triggerOnce: true },
+  // Provide default observer options, setting triggerOnce to false
+  observerOptions = { threshold: 0.1, triggerOnce: false },
   ...props
 }: AnimatedSectionProps) {
   // Destructure triggerOnce for the hook, pass the rest
