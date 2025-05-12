@@ -105,4 +105,19 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  .typing-cursor {
+    display: inline-block;
+    width: 2px; /* Adjust width as needed */
+    height: 1em; /* Should match the font height */
+    background-color: hsl(var(--primary)); /* Cursor color */
+    animation: blink-caret 0.75s step-end infinite;
+    margin-left: 2px; /* Space after the last letter */
+    vertical-align: text-bottom; /* Aligns cursor with text */
+  }
+
+  @keyframes blink-caret {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+  }
 }

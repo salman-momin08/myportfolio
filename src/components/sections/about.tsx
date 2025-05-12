@@ -24,9 +24,9 @@ export function AboutSection() {
               alt="About Me Image - Replace with your portrait"
               width={400}
               height={400}
-              className="rounded-lg shadow-lg object-cover aspect-square" // Ensure aspect ratio is square
-              data-ai-hint="professional portrait developer headshot" // Updated hint
-              priority // Added priority for potential LCP improvement
+              className="rounded-lg shadow-lg object-cover aspect-square animate-float" 
+              data-ai-hint="professional portrait developer headshot" 
+              priority 
             />
         </div>
       </div>
