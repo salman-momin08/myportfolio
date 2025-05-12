@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -27,9 +26,10 @@ export function HeroSection() {
       setDisplayedPrimaryName('');
       setIsPrimaryTypingComplete(false);
     } else {
-      // Optionally, clear the name when out of view to ensure it's blank before re-typing
-      // setDisplayedPrimaryName('');
-      // setIsPrimaryTypingComplete(false); // Ensure it's ready to type again
+      // Clear the name and reset completion status when out of view
+      // to ensure a clean state for the next intersection.
+      setDisplayedPrimaryName('');
+      setIsPrimaryTypingComplete(false);
     }
   }, [isIntersecting, primaryName]); // Depend on isIntersecting and primaryName
 
