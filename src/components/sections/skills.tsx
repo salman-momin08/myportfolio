@@ -6,7 +6,7 @@ import { AnimatedSection } from '@/components/animated-section';
 
 export function SkillsSection() {
   return (
-    <AnimatedSection id="skills" className="bg-secondary"> {/* Changed to bg-secondary */}
+    <AnimatedSection id="skills" className="bg-background"> {/* Changed from bg-secondary to bg-background */}
       <div className="container mx-auto">
         <div className="heading text-center mb-12 animate-scroll">
           <small>My Abilities</small>

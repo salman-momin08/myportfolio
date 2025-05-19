@@ -16,29 +16,28 @@ export function HeroSection() {
 
   const [sectionRef, isIntersecting] = useIntersectionObserver({
     threshold: 0.1,
-    triggerOnce: false,
+    triggerOnce: false, // Ensure animation re-triggers on re-scroll
   });
 
   useEffect(() => {
-    if (isIntersecting) {
-      setDisplayedPrimaryName('');
-      setIsPrimaryTypingComplete(false);
-    } else {
-      setDisplayedPrimaryName('');
-      setIsPrimaryTypingComplete(false);
-    }
-  }, [isIntersecting, primaryName]);
-
-  useEffect(() => {
     let timeoutId: NodeJS.Timeout;
-    if (isIntersecting && !isPrimaryTypingComplete && displayedPrimaryName.length < primaryName.length) {
-      timeoutId = setTimeout(() => {
-        setDisplayedPrimaryName(primaryName.substring(0, displayedPrimaryName.length + 1));
-      }, 200); // Typing speed
-    } else if (isIntersecting && displayedPrimaryName.length === primaryName.length && displayedPrimaryName.length > 0) {
-      setIsPrimaryTypingComplete(true);
-    }
+    if (isIntersecting) {
+      // Reset animation state if section re-enters viewport
+      setDisplayedPrimaryName('');
+      setIsPrimaryTypingComplete(false);
 
+      if (displayedPrimaryName.length < primaryName.length) {
+        timeoutId = setTimeout(() => {
+          setDisplayedPrimaryName(primaryName.substring(0, displayedPrimaryName.length + 1));
+        }, 150); // Slower typing speed
+      } else if (displayedPrimaryName.length === primaryName.length && displayedPrimaryName.length > 0) {
+        setIsPrimaryTypingComplete(true);
+      }
+    } else {
+      // Optionally reset when not intersecting if you want animation to always restart from scratch
+      // setDisplayedPrimaryName('');
+      // setIsPrimaryTypingComplete(false);
+    }
     return () => clearTimeout(timeoutId);
   }, [displayedPrimaryName, primaryName, isPrimaryTypingComplete, isIntersecting]);
 
@@ -48,38 +47,38 @@ export function HeroSection() {
       ref={sectionRef}
       id="home"
       className={cn(
-        "min-h-screen flex items-center justify-center text-center bg-gradient-to-b from-background via-background to-secondary",
+        "min-h-screen flex items-center justify-center text-center bg-gradient-to-b from-background via-background to-background", // Changed to-secondary to to-background
         'transition-opacity duration-700 ease-out',
         isIntersecting ? 'opacity-100' : 'opacity-0',
-        isIntersecting ? 'in-view' : ''
+        isIntersecting ? 'in-view' : '' // This class is used by globals.css for animate-scroll
       )}
     >
       <div className="space-y-6">
         <h1 className={cn(
           "text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-foreground",
-          "animate-scroll"
+           isIntersecting ? "animate-scroll" : "" // Apply animation only when intersecting
         )} style={{ animationDelay: '0ms' }}>
           Hi, I'm{' '}
-          <span className="text-primary"> {/* Ensured text-primary is applied */}
+          <span className="text-primary">
             {displayedPrimaryName}
             {isIntersecting && !isPrimaryTypingComplete && displayedPrimaryName.length < primaryName.length && (
               <span className="typing-cursor" />
             )}
           </span>
           {isPrimaryTypingComplete && secondaryNameDisplay && (
-            <span className="text-2xl text-muted-foreground ml-2 animate-fade-in-delayed">
+            <span className={cn("text-2xl text-muted-foreground ml-2", isIntersecting ? "animate-fade-in-delayed" : "opacity-0")}>
               {secondaryNameDisplay}
             </span>
           )}
         </h1>
-        <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl animate-scroll" style={{ animationDelay: '100ms' }}>
+        <p className={cn("mx-auto max-w-[700px] text-muted-foreground md:text-xl", isIntersecting ? "animate-scroll" : "")} style={{ animationDelay: '100ms' }}>
           {heroData.title}
         </p>
-         <p className="mx-auto max-w-[600px] text-lg text-secondary-foreground animate-scroll" style={{ animationDelay: '200ms' }}>
+         <p className={cn("mx-auto max-w-[600px] text-lg text-secondary-foreground", isIntersecting ? "animate-scroll" : "")} style={{ animationDelay: '200ms' }}>
           {heroData.subtitle}
         </p>
-        <div className="animate-scroll" style={{ animationDelay: '300ms' }}>
-          <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+        <div className={cn(isIntersecting ? "animate-scroll" : "")} style={{ animationDelay: '300ms' }}>
+          <Button asChild size="lg" className="c-btn h-btn">
             <Link href={heroData.ctaLink}>{heroData.ctaText}</Link>
           </Button>
         </div>
