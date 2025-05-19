@@ -6,14 +6,19 @@ import { AnimatedSection } from '@/components/animated-section';
 
 export function SkillsSection() {
   return (
-    <AnimatedSection id="skills" className="bg-secondary"> {/* Changed background to secondary */}
+    <AnimatedSection id="skills" className="skill"> {/* Changed background to secondary */}
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-primary animate-scroll">
-          Skills
-        </h2>
+        <div className="heading text-center mb-12 animate-scroll">
+          <small>My Abilities</small>
+          <h3>Skills</h3>
+        </div>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {skillsData.map((category: SkillCategory, index) => (
-            <Card key={index} className="animate-scroll bg-card shadow-md" style={{ animationDelay: `${index * 150}ms` }}> {/* Added explicit bg-card and shadow */}
+            <Card 
+              key={index} 
+              className="animate-scroll bg-card shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out" 
+              style={{ animationDelay: `${index * 150}ms` }}
+            >
               <CardHeader className="flex flex-row items-center gap-3 pb-2">
                 <category.icon className="w-6 h-6 text-primary" />
                 <CardTitle className="text-lg font-semibold text-foreground">{category.title}</CardTitle>
@@ -21,7 +26,7 @@ export function SkillsSection() {
               <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill) => (
-                    <Badge key={skill} variant="outline" className="text-sm border-primary text-primary">{skill}</Badge> // Adjusted badge style
+                    <Badge key={skill} variant="outline" className="text-sm border-primary text-primary">{skill}</Badge>
                   ))}
                 </div>
               </CardContent>
