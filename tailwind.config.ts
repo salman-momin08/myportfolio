@@ -9,6 +9,10 @@ export default {
   ],
   theme: {
   	extend: {
+      fontFamily: {
+        sans: ['var(--font-inter)', 'sans-serif'], // Keep Inter as sans, or remove if Josefin is the only sans
+        josefin: ['var(--font-josefin)', 'sans-serif'], // Add Josefin Sans
+      },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -83,20 +87,25 @@ export default {
   					height: '0'
   				}
   			},
-        floatAnimation: {
+        floatAnimation: { /* Renamed from floatimg for consistency */
           '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-10px)' },
+          '50%': { transform: 'translateY(-15px)' }, /* Adjusted for less aggressive float */
         },
         fadeInDelayed: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
+         'pulse-subtle': { /* Added from user's custom CSS for back-to-top button */
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '.7' },
+        }
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
         'float': 'floatAnimation 3s ease-in-out infinite',
         'fade-in-delayed': 'fadeInDelayed 0.5s ease-in forwards 0.3s',
+        'pulse-subtle': 'pulse-subtle 3s infinite ease-in-out',
   		}
   	}
   },

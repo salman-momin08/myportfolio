@@ -1,21 +1,21 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google'; // Using Inter for a clean look
+import { Josefin_Sans } from 'next/font/google'; // Changed to Josefin Sans
 import './globals.css';
 import { cn } from '@/lib/utils';
-import { Toaster } from "@/components/ui/toaster" // Import Toaster
-import { heroData } from '@/lib/data'; // Import heroData
+import { Toaster } from "@/components/ui/toaster";
+import { heroData } from '@/lib/data';
 
-const inter = Inter({
+const josefinSans = Josefin_Sans({ // Changed font
   subsets: ['latin'],
-  variable: '--font-sans',
+  variable: '--font-josefin', // Changed variable name
+  weight: ['400', '600', '700'] // Added weights if needed
 });
 
-// Use preferred name for title if available
 const displayName = heroData.preferredName || heroData.name;
 
 export const metadata: Metadata = {
-  title: `${displayName} - Portfolio`, // Use display name in title
-  description: `Personal portfolio website for ${displayName} showcasing skills and experience.`, // Updated description
+  title: `${displayName} - Portfolio`,
+  description: `Personal portfolio website for ${displayName} showcasing skills and experience.`,
 };
 
 export default function RootLayout({
@@ -28,12 +28,12 @@ export default function RootLayout({
       <head />
       <body
         className={cn(
-          'min-h-screen bg-background font-sans antialiased', // Removed 'dark' class
-          inter.variable
+          'min-h-screen bg-background font-josefin antialiased', // Use new font variable
+          josefinSans.variable // Apply new font variable
         )}
       >
         {children}
-        <Toaster /> {/* Add Toaster component */}
+        <Toaster />
       </body>
     </html>
   );
