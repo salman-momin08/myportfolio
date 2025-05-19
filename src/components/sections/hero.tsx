@@ -24,7 +24,6 @@ export function HeroSection() {
   useEffect(() => {
     if (isIntersecting) {
       // When section becomes visible, reset states to allow re-animation.
-      // React state setters are idempotent, so calling them with current values won't cause extra renders.
       setDisplayedPrimaryName('');
       setIsPrimaryTypingComplete(false);
     } else {
@@ -42,7 +41,7 @@ export function HeroSection() {
       // If intersecting, not yet complete, and there's more of the name to type
       typingTimeoutId = setTimeout(() => {
         setDisplayedPrimaryName(primaryName.substring(0, displayedPrimaryName.length + 1));
-      }, 150); // Typing speed
+      }, 200); // Adjusted typing speed to be slower
     } else if (isIntersecting && primaryName && displayedPrimaryName.length === primaryName.length && !isPrimaryTypingComplete) {
       // If intersecting, name is fully typed, and not yet marked as complete
       setIsPrimaryTypingComplete(true);
@@ -58,7 +57,7 @@ export function HeroSection() {
       ref={sectionRef}
       id="home"
       className={cn(
-        "min-h-screen flex items-center justify-center text-center bg-gradient-to-b from-background via-background to-background",
+        "min-h-screen flex items-center justify-center text-center bg-gradient-to-b from-background via-background to-background", // Changed to-secondary to to-background
         'transition-opacity duration-700 ease-out', // Section fade effect
         isIntersecting ? 'opacity-100' : 'opacity-0',
         isIntersecting ? 'in-view' : '' // For child .animate-scroll elements
@@ -70,7 +69,7 @@ export function HeroSection() {
            isIntersecting ? "animate-scroll" : "" // H1 scroll animation
         )} style={{ animationDelay: '0ms' }}>
           Hi, I'm{' '}
-          <span className="text-primary">
+          <span className="text-accent"> {/* Changed from text-primary to text-accent */}
             {displayedPrimaryName}
             {/* Typing cursor */}
             {isIntersecting && !isPrimaryTypingComplete && primaryName && displayedPrimaryName.length < primaryName.length && (
