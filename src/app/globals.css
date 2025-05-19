@@ -43,31 +43,41 @@
   }
 
   .dark {
-    /* Mirroring light theme vars for now, adjust if specific dark theme is needed */
-    --background: 210 17% 98%;
-    --foreground: 0 0% 20%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 20%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 20%;
-    --primary: 213 37% 17%;
-    --primary-foreground: 210 17% 98%;
-    --secondary: 200 17% 96%;
-    --secondary-foreground: 213 37% 17%;
-    --muted: 220 9% 96%;
-    --muted-foreground: 220 9% 45%;
-    --accent: 195 100% 50%;
+    /* Mirroring light theme vars, adjust if specific dark theme is needed */
+    --background: 213 37% 10%; /* Dark Navy Background */
+    --foreground: 210 17% 90%; /* Light Gray/Soft White Text */
+
+    --card: 213 37% 14%; /* Slightly Lighter Navy for Cards */
+    --card-foreground: 210 17% 90%;
+
+    --popover: 213 37% 14%;
+    --popover-foreground: 210 17% 90%;
+
+    --primary: 195 100% 60%;    /* Brighter Sky Blue for Primary Actions */
+    --primary-foreground: 213 37% 10%; /* Dark Navy text on Brighter Sky Blue */
+
+    --secondary: 213 37% 17%;  /* Navy Blue for Secondary elements */
+    --secondary-foreground: 195 100% 70%; /* Lighter Sky Blue text on Navy */
+
+    --muted: 213 37% 20%;    /* Darker Muted Background */
+    --muted-foreground: 210 17% 60%; /* Medium-Light Gray for Muted Text */
+
+    --accent: 20 100% 60%;   /* A contrasting accent like a vibrant orange/coral if Sky Blue is primary */
+    /* Or keep Sky Blue if it still works: --accent: 195 100% 50%; */
     --accent-foreground: 213 37% 10%;
-    --destructive: 0 72% 51%;
+
+    --destructive: 0 60% 50%; /* Slightly less intense Red for dark mode */
     --destructive-foreground: 0 0% 98%;
-    --border: 220 13% 86%;
-    --input: 220 13% 86%;
-    --ring: 195 100% 50%;
-    --chart-1: 195 100% 50%;
-    --chart-2: 213 37% 17%;
-    --chart-3: 0 72% 51%;
-    --chart-4: 220 9% 45%;
-    --chart-5: 0 0% 20%;
+
+    --border: 213 37% 25%; /* Darker Border */
+    --input: 213 37% 25%;  /* Darker Input Border */
+    --ring: 195 100% 60%;   /* Brighter Sky Blue for rings */
+
+    --chart-1: 195 100% 60%;
+    --chart-2: 210 17% 80%;
+    --chart-3: 0 60% 50%;
+    --chart-4: 210 17% 60%;
+    --chart-5: 210 17% 90%;
   }
 }
 
@@ -76,22 +86,21 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-josefin; /* Applied Josefin Sans */
-    font-weight: 400; /* Default font weight */
+    @apply bg-background text-foreground font-josefin;
+    font-weight: 400;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
   section {
      @apply py-16 md:py-24 lg:py-32 px-4 md:px-6;
   }
   .heading small{
-    @apply text-primary text-lg font-semibold; /* Adjusted to use theme colors */
+    @apply text-primary text-lg font-semibold;
   }
   .heading h3{
-    @apply mt-2 text-foreground text-3xl font-bold sm:text-4xl md:text-5xl; /* Adjusted to use theme colors */
+    @apply mt-2 text-foreground text-3xl font-bold sm:text-4xl md:text-5xl;
   }
 }
 
-/* Animations & Transitions from user's custom CSS, adapted for Tailwind/Theme */
 @layer utilities {
   .animate-scroll {
     opacity: 0;
@@ -117,25 +126,38 @@
     from, to { opacity: 1; }
     50% { opacity: 0; }
   }
-
-  .home-img-animate { /* Renamed from .home img for clarity */
-    animation: floatimg 4s ease-in-out infinite;
+  
+  .home-img-animate {
+    animation: floatAnimation 4s ease-in-out infinite; /* Uses floatAnimation */
   }
 
-  @keyframes floatimg {
-      0%{
-          transform: translateY(0px); /* Adjusted to translateY for vertical float */
+  @keyframes floatAnimation { /* Changed to translateX for horizontal movement */
+      0%, 100% {
+          transform: translateX(0px);
       }
-      50%{
-          transform: translateY(-15px); /* Adjusted for less aggressive float */
-      }
-      100%{
-          transform: translateY(0px);
+      50% {
+          transform: translateX(10px); /* Moves 10px to the right */
       }
   }
+  
+  @keyframes fadeInDelayed {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
 
-  /* Hover effect for links (adapted from .link class) */
+  .animate-fade-in-delayed {
+    animation: fadeInDelayed 0.5s ease-in forwards 0.3s;
+    opacity: 0; /* Start hidden for the animation */
+  }
+  
   .link-hover-effect {
     @apply relative after:absolute after:bg-primary after:bottom-0 after:left-1/2 after:h-0.5 after:w-0 after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0;
+  }
+
+  .contact-form .form-control {
+    @apply px-2.5 py-2.5 w-4/5; /* Adjusted padding and width */
+  }
+  .contact-form .form-control:focus {
+    @apply shadow-none border border-accent; /* Changed focus border to accent */
   }
 }

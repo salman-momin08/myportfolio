@@ -15,25 +15,20 @@ export function HeroSection() {
   const [isPrimaryTypingComplete, setIsPrimaryTypingComplete] = useState(false);
 
   const [sectionRef, isIntersecting] = useIntersectionObserver({
-    threshold: 0.1, // When 10% of the section is visible
-    triggerOnce: false, // Important: re-trigger animation on each intersection
+    threshold: 0.1,
+    triggerOnce: false,
   });
 
-  // Effect to reset animation states when intersection status changes
   useEffect(() => {
     if (isIntersecting) {
-      // Reset animation when section comes into view
       setDisplayedPrimaryName('');
       setIsPrimaryTypingComplete(false);
     } else {
-      // Clear the name and reset completion status when out of view
-      // to ensure a clean state for the next intersection.
       setDisplayedPrimaryName('');
       setIsPrimaryTypingComplete(false);
     }
-  }, [isIntersecting, primaryName]); // Depend on isIntersecting and primaryName
+  }, [isIntersecting, primaryName]);
 
-  // Typing effect for primary name
   useEffect(() => {
     let timeoutId: NodeJS.Timeout;
     if (isIntersecting && !isPrimaryTypingComplete && displayedPrimaryName.length < primaryName.length) {
@@ -41,7 +36,6 @@ export function HeroSection() {
         setDisplayedPrimaryName(primaryName.substring(0, displayedPrimaryName.length + 1));
       }, 200); // Typing speed
     } else if (isIntersecting && displayedPrimaryName.length === primaryName.length && displayedPrimaryName.length > 0) {
-      // Only set complete if it actually typed something and is intersecting
       setIsPrimaryTypingComplete(true);
     }
 
@@ -51,26 +45,22 @@ export function HeroSection() {
 
   return (
     <section
-      ref={sectionRef} // Assign ref for intersection observer
+      ref={sectionRef}
       id="home"
       className={cn(
         "min-h-screen flex items-center justify-center text-center bg-gradient-to-b from-background via-background to-secondary",
-        // Base transition styles for the section itself
         'transition-opacity duration-700 ease-out',
-        // Control the section's opacity based on intersection
         isIntersecting ? 'opacity-100' : 'opacity-0',
-        // Add 'in-view' class when intersecting for children with '.animate-scroll'
         isIntersecting ? 'in-view' : ''
       )}
     >
-      {/* This inner div will now rely on the parent section's 'in-view' class for its children's animations */}
       <div className="space-y-6">
         <h1 className={cn(
           "text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-foreground",
-          "animate-scroll" // Ensures the h1 block itself animates in
-        )} style={{ animationDelay: '0ms' }}> {/* Adjust delay as needed or remove if typing provides enough intro */}
+          "animate-scroll"
+        )} style={{ animationDelay: '0ms' }}>
           Hi, I'm{' '}
-          <span className="text-primary">
+          <span className="text-primary"> {/* Ensured text-primary is applied */}
             {displayedPrimaryName}
             {isIntersecting && !isPrimaryTypingComplete && displayedPrimaryName.length < primaryName.length && (
               <span className="typing-cursor" />
