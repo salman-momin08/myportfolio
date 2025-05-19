@@ -17,7 +17,7 @@ export function ProjectsSection() {
         </h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projectsData.map((project: ProjectItem, index) => (
-            <Card key={index} className="flex flex-col animate-scroll h-full bg-background shadow-lg hover:shadow-xl transition-shadow duration-300" style={{ animationDelay: `${index * 150}ms` }}> {/* Ensure individual cards use bg-background if main section is white */}
+            <Card key={index} className="flex flex-col animate-scroll h-full bg-card shadow-lg hover:shadow-xl transition-shadow duration-300" style={{ animationDelay: `${index * 150}ms` }}> {/* Ensure individual cards use bg-card if main section is white */}
               <CardHeader>
                  <div className="flex items-center gap-3 mb-2">
                     <project.icon className="w-6 h-6 text-primary" />

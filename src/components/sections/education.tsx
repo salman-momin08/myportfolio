@@ -14,7 +14,7 @@ export function EducationSection() {
           {educationData.map((item: EducationItem, index) => (
             <Card
               key={index}
-              className="animate-scroll flex items-start gap-4 p-6 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out bg-background" /* Ensure individual cards use bg-background if main section is white */
+              className="animate-scroll flex items-start gap-4 p-6 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out bg-card" /* Ensure individual cards use bg-card if main section is white */
               style={{ animationDelay: `${index * 150}ms` }}
             >
                <div className="bg-primary/10 p-3 rounded-full">
