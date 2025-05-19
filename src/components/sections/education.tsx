@@ -12,7 +12,11 @@ export function EducationSection() {
         </h2>
         <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
           {educationData.map((item: EducationItem, index) => (
-            <Card key={index} className="animate-scroll flex items-start gap-4 p-6" style={{ animationDelay: `${index * 150}ms` }}>
+            <Card 
+              key={index} 
+              className="animate-scroll flex items-start gap-4 p-6 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out" 
+              style={{ animationDelay: `${index * 150}ms` }}
+            >
                <div className="bg-primary/10 p-3 rounded-full">
                  <item.icon className="w-6 h-6 text-primary" />
                </div>
