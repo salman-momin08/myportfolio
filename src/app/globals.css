@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 210 33% 96%; /* Off White #F0F4F8 */
+    --background: 214 17% 93%; /* Light Grey #E5E7EB */
     --foreground: 0 0% 20%;   /* Dark Gray #333333 - General text on light background */
 
     --card: 0 0% 100%; /* White */
@@ -19,7 +19,7 @@
     --secondary: 164 100% 70%;  /* Teal #64FFDA */
     --secondary-foreground: 213 78% 11%; /* Navy Blue #0A192F - Text on Teal */
 
-    --muted: 210 33% 92%;    /* Lighter Off White / Very Light Gray */
+    --muted: 214 16% 89%;    /* Medium Light Grey #DDE1E6 */
     --muted-foreground: 0 0% 35%; /* Medium Gray */
 
     --accent: 195 100% 50%;   /* Sky Blue #00BFFF */
@@ -150,12 +150,12 @@
     animation: floatAnimationHorizontal 4s ease-in-out infinite;
   }
 
-  @keyframes floatAnimationHorizontal { /* Renamed and changed for horizontal float */
+  @keyframes floatAnimationHorizontal {
       0%, 100% {
           transform: translateX(0px);
       }
       50% {
-          transform: translateX(10px); /* Adjusted for horizontal movement */
+          transform: translateX(10px);
       }
   }
   
@@ -186,10 +186,10 @@
   @apply border-none bg-transparent text-2xl text-accent; /* Adapted to use theme accent */
 }
 
-.navbar-nav a {
+.navbar-nav a{
   @apply text-foreground relative; /* Adapted for theme text */
 }
-.navbar-nav a:hover {
+.navbar-nav a:hover{
   @apply text-primary; /* Adapted for theme primary on hover */
 }
 .navbar-nav a:after {
@@ -341,10 +341,10 @@ footer .link-group a:hover {
 
 #btn-back-to-top {
   @apply fixed bottom-10 right-10 hidden text-xl bg-accent text-accent-foreground p-3 rounded-full shadow-lg;
-  animation: pulse-subtle 2s infinite ease-in-out; /* Changed animation name for clarity */
+  animation: pulse-subtle 2s infinite ease-in-out;
 }
 
-@keyframes pulse-subtle { /* Renamed from pulse for clarity */
+@keyframes pulse-subtle {
   0%, 100% {
     transform: scale(1);
     opacity: 1;
