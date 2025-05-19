@@ -7,7 +7,7 @@ export function ExperienceSection() {
   return (
     <AnimatedSection id="experience" className="bg-background"> {/* Changed from bg-secondary to bg-background */}
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-primary animate-scroll">
+        <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl text-center mb-12 text-primary animate-scroll">
           Journey So Far
         </h2>
         {experienceData.length > 0 ? (
@@ -34,7 +34,7 @@ export function ExperienceSection() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-2">
-                    <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
+                    <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1 leading-relaxed tracking-wide">
                       {item.description.map((point, idx) => (
                         <li key={idx}>{point}</li>
                       ))}

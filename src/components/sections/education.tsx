@@ -7,7 +7,7 @@ export function EducationSection() {
   return (
     <AnimatedSection id="education" className="bg-card"> {/* Changed to bg-card (white) */}
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-primary animate-scroll">
+        <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl text-center mb-12 text-primary animate-scroll">
           Education
         </h2>
         <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
@@ -23,12 +23,12 @@ export function EducationSection() {
               <div>
                 <CardHeader className="p-0 pb-1">
                   <CardTitle className="text-lg font-semibold text-foreground">{item.degree}</CardTitle>
-                  <CardDescription className="text-sm text-muted-foreground">
+                  <CardDescription className="text-sm text-muted-foreground tracking-wide">
                     {item.institution}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="p-0">
-                  <p className="text-sm text-muted-foreground">{item.period}</p>
+                  <p className="text-sm text-muted-foreground tracking-wide">{item.period}</p>
                 </CardContent>
               </div>
             </Card>

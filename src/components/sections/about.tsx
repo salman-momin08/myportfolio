@@ -8,11 +8,11 @@ export function AboutSection() {
     <AnimatedSection id="about" className="bg-card"> {/* Changed to bg-card (white) */}
       <div className="container mx-auto grid gap-12 md:grid-cols-2 items-center">
         <div className="space-y-4 animate-scroll">
-           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary">
+           <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl text-primary">
              {aboutData.title}
            </h2>
           {aboutData.paragraphs.map((paragraph, index) => (
-            <p key={index} className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
+            <p key={index} className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed tracking-wide">
               {paragraph}
             </p>
           ))}
@@ -23,7 +23,7 @@ export function AboutSection() {
               alt="About Me Image - Replace with your portrait"
               width={400}
               height={400}
-              className="rounded-full shadow-lg object-cover aspect-square home-img-animate"  /* Changed to home-img-animate for horizontal float */
+              className="rounded-full shadow-lg object-cover aspect-square home-img-animate"
               data-ai-hint="professional portrait developer headshot"
               priority
             />

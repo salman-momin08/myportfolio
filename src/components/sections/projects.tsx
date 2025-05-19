@@ -12,7 +12,7 @@ export function ProjectsSection() {
   return (
     <AnimatedSection id="projects" className="bg-card"> {/* Section background is white */}
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-primary animate-scroll">
+        <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl text-center mb-12 text-primary animate-scroll">
           Projects
         </h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -23,7 +23,7 @@ export function ProjectsSection() {
                     <project.icon className="w-6 h-6 text-primary" />
                     <CardTitle className="text-xl font-semibold text-foreground">{project.title}</CardTitle>
                  </div>
-                <CardDescription className="text-muted-foreground flex-grow">{project.description}</CardDescription>
+                <CardDescription className="text-muted-foreground flex-grow leading-relaxed tracking-wide">{project.description}</CardDescription>
               </CardHeader>
               <CardContent className="flex flex-col justify-between flex-grow">
                  <div className="flex flex-wrap gap-2 mb-4">

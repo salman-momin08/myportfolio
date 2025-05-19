@@ -116,7 +116,7 @@
     @apply text-primary text-lg font-semibold;
   }
   .heading h3{
-    @apply mt-2 text-foreground text-3xl font-bold sm:text-4xl md:text-5xl;
+    @apply mt-2 text-foreground text-3xl font-bold sm:text-4xl md:text-5xl tracking-normal;
   }
 }
 

@@ -12,11 +12,11 @@ export function ContactSection() {
       <div className="container mx-auto max-w-xl">
         <div className="heading animate-scroll">
           <small>Contact</small>
-          <h3 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">
+          <h3 className="text-3xl font-bold sm:text-4xl md:text-5xl mb-4">
              {contactData.title}
           </h3>
         </div>
-        <p className="text-muted-foreground md:text-lg mb-8 animate-scroll" style={{ animationDelay: '100ms' }}>
+        <p className="text-muted-foreground md:text-lg mb-8 animate-scroll leading-relaxed tracking-wide" style={{ animationDelay: '100ms' }}>
           {contactData.description}
         </p>
 

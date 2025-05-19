@@ -65,7 +65,7 @@ export function HeroSection() {
     >
       <div className="space-y-6">
         <h1 className={cn(
-          "text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-foreground",
+          "text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl text-foreground tracking-tight",
            isIntersecting ? "animate-scroll" : "" // H1 scroll animation
         )} style={{ animationDelay: '0ms' }}>
           Hi, I'm{' '}
@@ -83,10 +83,10 @@ export function HeroSection() {
             </span>
           )}
         </h1>
-        <p className={cn("mx-auto max-w-[700px] text-muted-foreground md:text-xl", isIntersecting ? "animate-scroll" : "")} style={{ animationDelay: '100ms' }}>
+        <p className={cn("mx-auto max-w-[700px] text-muted-foreground md:text-xl leading-relaxed tracking-wide", isIntersecting ? "animate-scroll" : "")} style={{ animationDelay: '100ms' }}>
           {heroData.title}
         </p>
-         <p className={cn("mx-auto max-w-[600px] text-lg text-secondary-foreground", isIntersecting ? "animate-scroll" : "")} style={{ animationDelay: '200ms' }}>
+         <p className={cn("mx-auto max-w-[600px] text-lg text-secondary-foreground leading-relaxed tracking-wide", isIntersecting ? "animate-scroll" : "")} style={{ animationDelay: '200ms' }}>
           {heroData.subtitle}
         </p>
         <div className={cn(isIntersecting ? "animate-scroll" : "")} style={{ animationDelay: '300ms' }}>
