@@ -13,7 +13,7 @@ export interface ContactLink {
 }
 
 export interface ExperienceItem {
-  company: string; // Can represent "Academic", "Personal Projects", etc.
+  company: string;
   role: string;
   period: string;
   description: string[];
@@ -89,9 +89,10 @@ export const experienceData: ExperienceItem[] = [
     role: 'Data Analyst',
     period: 'Nov 2024 - Jan 2025',
     description: [
-      'Contributed features A and B to the project.',
-      'Fixed bugs C and D.',
-      'Collaborated with the community via GitHub issues and PRs.',
+      'Learnt various technologies of Data Preprocessing and Visualizations.',
+      'Learnt building dashboards using the PowerBI.',
+      'Engineered AQI project to find the insights of the top 5 metropolitan cities.',
+      'Helps the users to analyze better air quality to live in. ',
     ],
     icon: Github,
   },
@@ -101,26 +102,33 @@ export const experienceData: ExperienceItem[] = [
 export const projectsData: ProjectItem[] = [
   {
     title: 'Online Cake Shop',
-    description: 'A full-featured e-commerce website built with Next.js, Stripe, and Firebase. Demonstrates full-stack capabilities.', // Added context
-    tags: ['Next.js', 'React', 'TypeScript', 'Stripe', 'Firebase', 'Full-Stack'],
+    description: 'A full featured web application, It provides the users to customize the cakes, flavors and the date of delivery.', // Added context
+    tags: ['PHP', 'HTML', 'CSS', 'JAVASCRIPT', 'Full-Stack', 'SQL'],
     link: 'https://github.com/yourusername/ecommerce', // Replace with actual link
     icon: FolderKanban,
   },
   {
     title: 'Face Recognition System',
-    description: 'A collaborative task management application using MERN stack. Showcases API development and database integration.', // Added context
-    tags: ['MongoDB', 'Express', 'React', 'Node.js', 'MERN'],
+    description: 'A platform where the users face is recognized and marks their presence in the Excel and the MySQL.', // Added context
+    tags: ['Python', 'Tkinter', 'SQL', 'OpenCV', 'MySQL', 'Excel'],
     link: 'https://github.com/yourusername/task-manager', // Replace with actual link
     icon: FolderKanban,
   },
   {
     title: 'ResearchSphere',
+    description: 'A platform for the students and researchers to publish their papers. Provides the AI Pre-Check functionality to check the plagiarism and Acceptance rate of the paper.', // Added context
+    tags: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript', 'Shadcn/ui','GenKit'],
+    link: 'https://github.com/salman-momin08/researchsphere_repo',
+    icon: FolderKanban,
+  },
+  // Add more projects as needed
+  {
+    title: 'Portfolio',
     description: 'This very portfolio website, built with Next.js and Tailwind CSS to showcase my skills and projects.', // Added context
     tags: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript', 'Shadcn/ui'],
     // No link needed as it's the current site
     icon: FolderKanban,
   },
-  // Add more projects as needed
 ];
 
 export const skillsData: SkillCategory[] = [
@@ -146,7 +154,7 @@ export const skillsData: SkillCategory[] = [
   },
   {
     title: 'Tools & Concepts', // Renamed category
-    skills: ['Git', 'Docker', 'AWS (Basic)', 'Google Cloud (Basic)', 'CI/CD (Concepts)'], // Adjusted for fresher level
+    skills: ['Git', 'GitHub', 'Docker', 'AWS (Basic)', 'Google Cloud (Basic)', 'CI/CD (Concepts)'], // Adjusted for fresher level
     icon: Wrench,
   },
   {
@@ -161,14 +169,14 @@ export const educationData: EducationItem[] = [
    {
     institution: 'KLE SOCIETYS COLLEGE OF BCA GOKAK', 
     degree: 'Bachelor of Computer Application (BCA)', 
-    period: '2020 - 2023', 
+    period: '2020 - 2023  (CGPA: 8.92)', 
     icon: GraduationCap,
   },
   // Add M.S. if applicable
    {
     institution: 'The Oxford College of Engineering', // Replace with actual university
     degree: 'Master of Computer Application (MCA)', // Replace with actual degree
-    period: '2023 - Present', // Replace with actual dates or expected graduation
+    period: '2023 - Present  (CGPA: 9.05)', // Replace with actual dates or expected graduation
     icon: GraduationCap,
   },
 ];
@@ -176,10 +184,10 @@ export const educationData: EducationItem[] = [
 export const contactData = {
   title: "Get In Touch",
   description: "I'm actively looking for entry-level software engineering roles and eager to connect. Feel free to reach out!", // Adjusted for fresher
-  email: "your.email@example.com", // Replace with actual email
+  email: "Khwajamainuddinmomin@gmail.com", // Replace with actual email
   socialLinks: [
-    { name: 'GitHub', href: 'https://github.com/yourusername', icon: Github }, // Replace with actual username
-    { name: 'LinkedIn', href: 'https://linkedin.com/in/yourusername', icon: Linkedin }, // Replace with actual username
+    { name: 'GitHub', href: 'https://github.com/salman-momin08', icon: Github }, // Replace with actual username
+    { name: 'LinkedIn', href: 'https://linkedin.com/in/khwajamainuddin-momin-9b406921b', icon: Linkedin }, // Replace with actual username
   ] as ContactLink[], // Explicitly type socialLinks
 };
 

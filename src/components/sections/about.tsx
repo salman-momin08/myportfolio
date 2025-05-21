@@ -19,10 +19,10 @@ export function AboutSection() {
         </div>
         <div className="flex justify-center animate-scroll" style={{ animationDelay: '200ms' }}>
            <Image
-              src="https://picsum.photos/400/400"
+              src="/images/myimage.jpg"
               alt="About Me Image - Replace with your portrait"
-              width={400}
-              height={400}
+              width={500}
+              height={500}
               className="rounded-full shadow-lg object-cover aspect-square home-img-animate"
               data-ai-hint="professional portrait developer headshot"
               priority
