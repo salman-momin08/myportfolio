@@ -1,14 +1,20 @@
 import type { Metadata } from 'next';
-import { Josefin_Sans } from 'next/font/google'; // Changed to Josefin Sans
+import { Poppins, Inter } from 'next/font/google'; // Changed fonts
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from "@/components/ui/toaster";
 import { heroData } from '@/lib/data';
 
-const josefinSans = Josefin_Sans({ // Changed font
+const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-josefin', // Changed variable name
-  weight: ['400', '600', '700'] // Added weights if needed
+  variable: '--font-inter', // Variable for Inter
+  weight: ['400', '500', '600', '700']
+});
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  variable: '--font-poppins', // Variable for Poppins
+  weight: ['400', '500', '600', '700', '800']
 });
 
 const displayName = heroData.preferredName || heroData.name;
@@ -28,8 +34,9 @@ export default function RootLayout({
       <head />
       <body
         className={cn(
-          'min-h-screen bg-background font-josefin antialiased', // Use new font variable
-          josefinSans.variable // Apply new font variable
+          'min-h-screen bg-background font-inter antialiased', // Use Inter as base
+          inter.variable, // Apply Inter variable
+          poppins.variable // Apply Poppins variable
         )}
       >
         {children}

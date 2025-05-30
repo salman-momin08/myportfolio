@@ -24,8 +24,8 @@ export interface ProjectItem {
   title: string;
   description: string;
   tags: string[];
-  link?: string; // GitHub link
-  webLink?: string; // Live web link
+  link?: string; 
+  webLink?: string;
   icon: LucideIcon;
 }
 
@@ -109,13 +109,13 @@ export const projectsData: ProjectItem[] = [
   {
     title: 'Online Cake Shop',
     description: 'A engineered to help the users and vendors to serve the customers on their customized dates along with the customized ingridients and flavors of the cakes.',
-    tags: ['Python', 'Tkinter', 'SQL', 'OpenCV', 'MySQL', 'Excel'],
+    tags: ['PHP', 'HTML', 'CSS', 'JavaScript', 'Xampp', 'SQL'],
     icon: FolderKanban,
   },
   {
     title: 'Face Recognition System',
     description: 'A platform where the users face is recognized and marks their presence in the Excel and the MySQL.',
-    tags: ['PHP', 'HTML', 'CSS', 'JavaScript', 'Xampp'],
+    tags: ['Python', 'Tkinter', 'SQL', 'OpenCV', 'MySQL', 'Excel'],
     link: 'https://github.com/salman-momin08/Face_recognition',
     icon: FolderKanban,
   },
@@ -212,18 +212,28 @@ export const learningData = {
       icon: Code, // Or use a specific LeetCode icon if you have one as an SVG
     },
     {
-      name: "Data Structures & Algorithms Certificate",
-      href: "#", // Replace with actual certificate URL
-      issuer: "Coursera", // Example issuer
+      name: "Python Crash Course Certificate",
+      href: "https://drive.google.com/file/d/1jE--sHyw6NNpHP3VOAqTodpr5chhd71b/view?usp=drive_lin", 
+      issuer: "Coursera", 
       icon: Award,
     },
     {
-      name: "Web Development Bootcamp Certificate",
-      href: "#", // Replace with actual certificate URL
-      issuer: "Udemy", // Example issuer
+      name: "Explore Generative AI with the Gemini API in Vertex AI Badge",
+      href: "https://www.cloudskillsboost.google/public_profiles/9d8c4976-0a3d-49e3-8ee2-8bdc82e36a32/badges/15047244", 
       icon: Award,
     },
-    // Add more certificates or achievements as needed
+    {
+      name: "Build Real World AI Applications with Gemini and Imagen",
+      href: "https://www.cloudskillsboost.google/public_profiles/9d8c4976-0a3d-49e3-8ee2-8bdc82e36a32/badges/15043630", 
+      issuer: "GoogleCloud",
+      icon: Award,
+    },
+    {
+      name: "Prompt Design in Vertex AI",
+      href: "https://www.cloudskillsboost.google/public_profiles/9d8c4976-0a3d-49e3-8ee2-8bdc82e36a32/badges/15021425", 
+      issuer: "GoogleCloud",
+      icon: Award,
+    },
   ] as AchievementItem[],
   icon: Brain,
 };

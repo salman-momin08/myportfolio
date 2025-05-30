@@ -105,18 +105,21 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-josefin; /* Use Josefin Sans from layout */
+    @apply bg-background text-foreground font-inter; /* Use Inter as base font */
     font-weight: 400;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
   section {
      @apply py-16 md:py-24 lg:py-32 px-4 md:px-6;
   }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins; /* Apply Poppins to all headings */
+  }
   .heading small{
-    @apply text-primary text-lg font-semibold;
+    @apply text-primary text-lg font-semibold font-poppins;
   }
   .heading h3{
-    @apply mt-2 text-foreground text-3xl font-bold sm:text-4xl md:text-5xl tracking-normal;
+    @apply mt-2 text-foreground text-3xl font-bold sm:text-4xl md:text-5xl tracking-normal font-poppins;
   }
 }
 
@@ -140,30 +143,11 @@
     margin-left: 2px;
     vertical-align: text-bottom;
   }
-
-  @keyframes blink-caret {
-    from, to { opacity: 1; }
-    50% { opacity: 0; }
-  }
   
   .home-img-animate {
     animation: floatAnimationHorizontal 4s ease-in-out infinite;
   }
-
-  @keyframes floatAnimationHorizontal {
-      0%, 100% {
-          transform: translateX(0px);
-      }
-      50% {
-          transform: translateX(10px);
-      }
-  }
   
-  @keyframes fadeInDelayed {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-
   .animate-fade-in-delayed {
     animation: fadeInDelayed 0.5s ease-in forwards 0.3s;
     opacity: 0; /* Start hidden for the animation */
@@ -342,15 +326,4 @@ footer .link-group a:hover {
 #btn-back-to-top {
   @apply fixed bottom-10 right-10 hidden text-xl bg-accent text-accent-foreground p-3 rounded-full shadow-lg;
   animation: pulse-subtle 2s infinite ease-in-out;
-}
-
-@keyframes pulse-subtle {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.8;
-  }
 }

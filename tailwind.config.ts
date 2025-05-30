@@ -10,8 +10,9 @@ export default {
   theme: {
   	extend: {
       fontFamily: {
-        sans: ['var(--font-inter)', 'sans-serif'], // Keep Inter as sans, or remove if Josefin is the only sans
-        josefin: ['var(--font-josefin)', 'sans-serif'], // Add Josefin Sans
+        sans: ['var(--font-inter)', 'sans-serif'], // Default sans-serif to Inter
+        inter: ['var(--font-inter)', 'sans-serif'], // Explicitly define Inter
+        poppins: ['var(--font-poppins)', 'sans-serif'], // Define Poppins
       },
   		colors: {
   			background: 'hsl(var(--background))',
@@ -87,25 +88,30 @@ export default {
   					height: '0'
   				}
   			},
-        floatAnimation: { /* Renamed from floatimg for consistency */
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-15px)' }, /* Adjusted for less aggressive float */
+        floatAnimationHorizontal: {
+          '0%, 100%': { transform: 'translateX(0px)' },
+          '50%': { transform: 'translateX(10px)' },
         },
         fadeInDelayed: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
-         'pulse-subtle': { /* Added from user's custom CSS for back-to-top button */
-          '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '.7' },
+        'blink-caret': {
+          'from, to': { opacity: '1' },
+          '50%': { opacity: '0' },
+        },
+        'pulse-subtle': {
+          '0%, 100%': { transform: 'scale(1)', opacity: '1'},
+          '50%': { transform: 'scale(1.1)', opacity: '0.8' },
         }
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
-        'float': 'floatAnimation 3s ease-in-out infinite',
+        'home-img-animate': 'floatAnimationHorizontal 4s ease-in-out infinite',
         'fade-in-delayed': 'fadeInDelayed 0.5s ease-in forwards 0.3s',
-        'pulse-subtle': 'pulse-subtle 3s infinite ease-in-out',
+        'pulse-subtle': 'pulse-subtle 2s infinite ease-in-out',
+        'blink-caret': 'blink-caret 0.75s step-end infinite',
   		}
   	}
   },

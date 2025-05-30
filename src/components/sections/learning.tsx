@@ -50,7 +50,7 @@ export function LearningSection() {
                   <CardContent className="mt-auto">
                     <Button asChild variant="outline" size="sm" className="w-full">
                       <Link href={item.href} target="_blank" rel="noopener noreferrer">
-                        View Certificate/Profile
+                        View Here
                       </Link>
                     </Button>
                   </CardContent>
