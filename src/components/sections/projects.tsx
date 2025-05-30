@@ -4,7 +4,7 @@ import type { ProjectItem } from '@/lib/data';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Github, ExternalLink } from 'lucide-react'; // Added ExternalLink
+import { Github, ExternalLink } from 'lucide-react';
 import { AnimatedSection } from '@/components/animated-section';
 import { cn } from '@/lib/utils';
 
@@ -17,7 +17,7 @@ export function ProjectsSection() {
         </h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projectsData.map((project: ProjectItem, index) => (
-            <Card key={index} className="flex flex-col animate-scroll h-full bg-background shadow-lg hover:shadow-xl transition-shadow duration-300" style={{ animationDelay: `${index * 150}ms` }}> {/* Individual cards are grey */}
+            <Card key={index} className="flex flex-col animate-scroll h-full bg-card shadow-lg hover:shadow-xl transition-shadow duration-300" style={{ animationDelay: `${index * 150}ms` }}> {/* Changed from bg-background to bg-card */}
               <CardHeader>
                  <div className="flex items-center gap-3 mb-2">
                     <project.icon className="w-6 h-6 text-primary" />
