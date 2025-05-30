@@ -1,5 +1,5 @@
 import type { LucideIcon } from 'lucide-react';
-import { Github, Linkedin, Mail, Briefcase, GraduationCap, Wrench, FolderKanban, Code, Target, ExternalLink } from 'lucide-react'; // Added Target and ExternalLink icons
+import { Github, Linkedin, Mail, Briefcase, GraduationCap, Wrench, FolderKanban, Code, Target, ExternalLink, Brain, Award } from 'lucide-react'; // Added Brain, Award icons
 
 export interface NavItem {
   name: string;
@@ -42,11 +42,19 @@ export interface SkillCategory {
   icon: LucideIcon;
 }
 
+export interface AchievementItem {
+  name: string;
+  href: string;
+  issuer?: string; // e.g., "LeetCode", "Coursera"
+  icon: LucideIcon;
+}
+
 export const navItems: NavItem[] = [
   { name: 'About', href: '#about' },
   { name: 'Experience', href: '#experience' },
   { name: 'Projects', href: '#projects' },
   { name: 'Skills', href: '#skills' },
+  { name: 'Learning', href: '#learning' }, // Added Learning section
   { name: 'Education', href: '#education' },
   { name: 'Contact', href: '#contact' },
 ];
@@ -85,25 +93,30 @@ export const experienceData: ExperienceItem[] = [
   {
     company: 'Leosias Technologies',
     role: 'Data Analyst',
-    period: 'Nov 2024 - Jan 2025', // Note: This period is in the future.
+    period: 'Nov 2024 - Jan 2025',
     description: [
       'Learnt various technologies of Data Preprocessing and Visualizations.',
       'Learnt building dashboards using the PowerBI.',
       'Engineered AQI project to find the insights of the top 5 metropolitan cities.',
       'Helps the users to analyze better air quality to live in. ',
     ],
-    icon: Briefcase, // Changed to Briefcase for a more professional/work context
+    icon: Briefcase,
   },
 ];
 
 
 export const projectsData: ProjectItem[] = [
   {
+    title: 'Online Cake Shop',
+    description: 'A engineered to help the users and vendors to serve the customers on their customized dates along with the customized ingridients and flavors of the cakes.',
+    tags: ['Python', 'Tkinter', 'SQL', 'OpenCV', 'MySQL', 'Excel'],
+    icon: FolderKanban,
+  },
+  {
     title: 'Face Recognition System',
     description: 'A platform where the users face is recognized and marks their presence in the Excel and the MySQL.',
-    tags: ['Python', 'Tkinter', 'SQL', 'OpenCV', 'MySQL', 'Excel'],
+    tags: ['PHP', 'HTML', 'CSS', 'JavaScript', 'Xampp'],
     link: 'https://github.com/salman-momin08/Face_recognition',
-    // webLink: undefined, // Assuming this is a desktop app
     icon: FolderKanban,
   },
   {
@@ -111,23 +124,30 @@ export const projectsData: ProjectItem[] = [
     description: 'A platform for the students and researchers to publish their papers. Provides the AI Pre-Check functionality to check the plagiarism and Acceptance rate of the paper.',
     tags: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript', 'Shadcn/ui','GenKit'],
     link: 'https://github.com/salman-momin08/researchsphere_repo',
-    webLink: 'https://researchsphere-live-demo.example.com', // Placeholder live link
+    webLink: 'https://researchsphere-two.vercel.app',
     icon: FolderKanban,
   },
   {
     title: 'Csv data Analyzer',
     description: 'The is engineered to allow the users to find the insights of the data for future trends, business patters etc. It will allow the users to upload one .csv or the user can add two files for the comparison based on the similar columns present.',
     tags: ['Python', 'Streamlit', 'Plotly'],
-    link: 'https://github.com/salman-momin08/AQI', // Assuming this is the correct repo for the CSV analyzer
-    webLink: 'https://csv-analyzer-live.example.com', // Placeholder live link
+    link: 'https://github.com/salman-momin08/AQI',
+    webLink: 'https://datacsvanalyzer.streamlit.app/',
+    icon: FolderKanban,
+  },
+  {
+    title: 'WeatherEyes',
+    description: 'An Weather app designed the weather app in such a way that it uses the JWT authentication for the users. It will save the searches, modify the search, and also can delete the searches. Randomly AI generate the background image based on the current weather on the place. Shows further 5 days forecast. ',
+    tags: ['NextJS', 'React', 'Tailwind CSS', 'TypeScript', 'Shadcn/ui', 'Genkit','MongoDB'],
+    link: 'https://github.com/salman-momin08/weatherapp',
+    webLink: 'https://weatherapp-five-omega.vercel.app',
     icon: FolderKanban,
   },
   {
     title: 'Portfolio',
     description: 'This very portfolio website, built with Next.js and Tailwind CSS to showcase my skills and projects.',
     tags: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript', 'Shadcn/ui'],
-    link: 'https://github.com/salman-momin08/your-portfolio-repo', // Replace with your actual portfolio repo link
-    webLink: '#', // Links to the current page
+    link: 'https://github.com/salman-momin08/Portfolio',
     icon: FolderKanban,
   },
 ];
@@ -179,6 +199,34 @@ export const educationData: EducationItem[] = [
     icon: GraduationCap,
   },
 ];
+
+export const learningData = {
+  title: "Continuous Learning & Problem Solving",
+  description: "I'm passionate about continuously expanding my skillset and tackling challenging problems. Platforms like LeetCode are invaluable for honing my data structures and algorithms knowledge. Below are some of my achievements and ongoing learning efforts.",
+  achievementsSubtitle: "Certificates & Achievements",
+  achievements: [
+    {
+      name: "LeetCode Profile",
+      href: "https://leetcode.com/your-leetcode-profile/", // Replace with your actual LeetCode profile URL
+      issuer: "LeetCode",
+      icon: Code, // Or use a specific LeetCode icon if you have one as an SVG
+    },
+    {
+      name: "Data Structures & Algorithms Certificate",
+      href: "#", // Replace with actual certificate URL
+      issuer: "Coursera", // Example issuer
+      icon: Award,
+    },
+    {
+      name: "Web Development Bootcamp Certificate",
+      href: "#", // Replace with actual certificate URL
+      issuer: "Udemy", // Example issuer
+      icon: Award,
+    },
+    // Add more certificates or achievements as needed
+  ] as AchievementItem[],
+  icon: Brain,
+};
 
 export const contactData = {
   title: "Get In Touch",
