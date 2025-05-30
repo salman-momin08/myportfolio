@@ -4,14 +4,14 @@
 
 @layer base {
   :root {
-    --background: 214 17% 93%; /* Light Grey #E5E7EB */
-    --foreground: 0 0% 20%;   /* Dark Gray #333333 - General text on light background */
+    --background: 210 33% 96%; /* Off White #F0F4F8 */
+    --foreground: 180 25% 37%; /* Dark Slate Gray #2F4F4F - New main text color */
 
     --card: 0 0% 100%; /* White */
-    --card-foreground: 0 0% 20%; /* Dark Gray */
+    --card-foreground: 180 25% 37%; /* Dark Slate Gray */
 
     --popover: 0 0% 100%; /* White */
-    --popover-foreground: 0 0% 20%; /* Dark Gray */
+    --popover-foreground: 180 25% 37%; /* Dark Slate Gray */
 
     --primary: 213 78% 11%;    /* Navy Blue #0A192F */
     --primary-foreground: 218 69% 90%; /* Light Gray #CCD6F6 - Text on Navy Blue */
@@ -20,7 +20,7 @@
     --secondary-foreground: 213 78% 11%; /* Navy Blue #0A192F - Text on Teal */
 
     --muted: 214 16% 89%;    /* Medium Light Grey #DDE1E6 */
-    --muted-foreground: 0 0% 35%; /* Medium Gray */
+    --muted-foreground: 0 0% 35%; /* Medium Gray #595959 - For less prominent text */
 
     --accent: 195 100% 50%;   /* Sky Blue #00BFFF */
     --accent-foreground: 0 0% 100%; /* White #FFFFFF - Text on Sky Blue */
@@ -105,7 +105,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-inter; /* Use Inter as base font */
+    @apply bg-background text-foreground font-inter;
     font-weight: 400;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
@@ -113,13 +113,13 @@
      @apply py-16 md:py-24 lg:py-32 px-4 md:px-6;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-poppins; /* Apply Poppins to all headings */
+    @apply font-poppins;
   }
   .heading small{
     @apply text-primary text-lg font-semibold font-poppins;
   }
   .heading h3{
-    @apply mt-2 text-foreground text-3xl font-bold sm:text-4xl md:text-5xl tracking-normal font-poppins;
+    @apply mt-2 text-primary text-3xl font-bold sm:text-4xl md:text-5xl tracking-normal font-poppins; /* Changed to text-primary */
   }
 }
 
@@ -143,16 +143,16 @@
     margin-left: 2px;
     vertical-align: text-bottom;
   }
-  
+
   .home-img-animate {
     animation: floatAnimationHorizontal 4s ease-in-out infinite;
   }
-  
+
   .animate-fade-in-delayed {
     animation: fadeInDelayed 0.5s ease-in forwards 0.3s;
     opacity: 0; /* Start hidden for the animation */
   }
-  
+
   .link-hover-effect {
     @apply relative after:absolute after:bg-primary after:bottom-0 after:left-1/2 after:h-0.5 after:w-0 after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0;
   }
@@ -167,14 +167,14 @@
 
 /* Custom styles from user - integrated or adapted */
 .nav-menu {
-  @apply border-none bg-transparent text-2xl text-accent; /* Adapted to use theme accent */
+  @apply border-none bg-transparent text-2xl text-accent;
 }
 
 .navbar-nav a{
-  @apply text-foreground relative; /* Adapted for theme text */
+  @apply text-foreground relative;
 }
 .navbar-nav a:hover{
-  @apply text-primary; /* Adapted for theme primary on hover */
+  @apply text-primary;
 }
 .navbar-nav a:after {
   @apply bg-none block absolute bg-primary transition-all duration-300 ease-out;
@@ -182,7 +182,7 @@
   content: "";
   height: 2px;
   left: 50%;
-  top: 35px; /* This might need adjustment based on font size/line height */
+  top: 35px;
   width: 0;
 }
 .navbar-nav a:hover:after {
@@ -191,17 +191,17 @@
 }
 
 .c-btn {
-  @apply border-none bg-accent text-accent-foreground text-lg; /* Adapted to use theme accent */
+  @apply border-none bg-accent text-accent-foreground text-lg;
 }
 
 .h-btn:hover {
-  @apply bg-primary text-primary-foreground; /* Use primary for hover */
-  transform: translateY(-5px); /* Adjusted for subtle lift */
+  @apply bg-primary text-primary-foreground;
+  transform: translateY(-5px);
   transition-duration: 0.3s;
 }
 
 .link {
-  @apply text-accent relative text-lg; /* Adapted */
+  @apply text-accent relative text-lg;
 }
 .link::after {
   content: '';
@@ -211,13 +211,13 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  top: 20px; /* May need adjustment */
-  background-color: hsl(var(--primary)); /* Use primary for underline */
+  top: 20px;
+  background-color: hsl(var(--primary));
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
 .link:hover {
-  @apply text-primary; /* Hover to primary */
+  @apply text-primary;
 }
 .link:hover::after {
   transform: scaleX(1);
@@ -225,105 +225,146 @@
 }
 
 .expertise .service-card {
-  @apply text-center p-4 rounded-lg; /* Adjusted padding and radius */
+  @apply text-center p-4 rounded-lg;
 }
 
 .progress-card {
-  @apply p-8 bg-card text-center rounded-xl; /* Adapted for theme card, adjusted padding/radius */
+  @apply p-8 bg-card text-center rounded-xl;
 }
 .progress-card:hover {
-  transform: scale(1.05); /* More subtle scale */
+  transform: scale(1.05);
   transition-duration: 0.3s;
 }
 
 .circular-progress {
   @apply relative h-32 w-32 rounded-full flex items-center justify-center;
-  background: conic-gradient(hsl(var(--primary)) 3.6deg, hsl(var(--muted)) 0deg); /* Adapted to theme */
+  background: conic-gradient(hsl(var(--primary)) 3.6deg, hsl(var(--muted)) 0deg);
 }
 .circular-progress::before {
   content: "";
-  @apply absolute h-[120px] w-[120px] rounded-full bg-card; /* Use card background */
+  @apply absolute h-[120px] w-[120px] rounded-full bg-card;
 }
 .progress-value {
-  @apply relative text-xl font-semibold text-foreground; /* Adapted */
+  @apply relative text-xl font-semibold text-foreground;
 }
 .text {
-  @apply text-lg font-medium text-muted-foreground; /* Adapted */
+  @apply text-lg font-medium text-muted-foreground;
 }
 
 #myBtnContainer button {
-  @apply border-none text-foreground bg-transparent text-xl font-semibold cursor-pointer inline-block mx-6; /* Adapted */
+  @apply border-none text-foreground bg-transparent text-xl font-semibold cursor-pointer inline-block mx-6;
 }
 #myBtnContainer button:hover {
-  @apply text-primary; /* Adapted */
+  @apply text-primary;
 }
 #myBtnContainer button:focus {
   @apply outline-none;
 }
 
 .testimonial i {
-  @apply text-5xl text-accent; /* Adapted */
+  @apply text-5xl text-accent;
 }
 .testimonial .nextprev-btn {
   @apply border-none bg-transparent;
 }
 .prev:hover, .prev-btn:hover {
   @apply text-primary;
-  transform: translateX(-5px); /* Subtle shift */
+  transform: translateX(-5px);
   transition-duration: 0.3s;
 }
 .next:hover, .next-btn:hover {
   @apply text-primary;
-  transform: translateX(5px); /* Subtle shift */
+  transform: translateX(5px);
   transition-duration: 0.3s;
 }
 .blog .blogpost small {
-  @apply text-primary text-base; /* Adapted */
+  @apply text-primary text-base;
 }
 .blog .blogpost h4, .blogpost a {
-  @apply text-foreground font-bold mt-4 no-underline; /* Adapted */
+  @apply text-foreground font-bold mt-4 no-underline;
 }
 .blogpost a:hover {
-  @apply text-primary; /* Adapted */
+  @apply text-primary;
 }
 .blog .blogpost .read-more-btn {
-  @apply no-underline text-accent text-base; /* Adapted */
+  @apply no-underline text-accent text-base;
 }
 .blog .blogpost .read-more-btn:hover {
-  @apply text-primary; /* Adapted */
+  @apply text-primary;
 }
 
 .contact-details i {
-  @apply text-2xl text-accent; /* Adapted */
+  @apply text-2xl text-accent;
 }
 .contact-details p {
-  @apply text-lg ml-4 text-muted-foreground; /* Adapted */
+  @apply text-lg ml-4 text-muted-foreground;
 }
 
 footer .link-group a {
-  @apply ml-2.5 mr-2.5 no-underline text-muted-foreground text-base mt-4; /* Adapted */
+  @apply ml-2.5 mr-2.5 no-underline text-muted-foreground text-base mt-4;
 }
 footer .link-group a:hover {
-  @apply text-accent; /* Adapted */
+  @apply text-accent;
 }
 .social-links button {
-  @apply border-none mr-4 text-lg bg-card p-3.5; /* Adapted to use card bg */
+  @apply border-none mr-4 text-lg bg-card p-3.5;
 }
 .social-links button:hover {
-  @apply text-accent-foreground; /* General hover for social buttons */
-  transform: translateY(-5px); /* Subtle lift */
+  @apply text-accent-foreground;
+  transform: translateY(-5px);
   transition-duration: 0.3s;
 }
 .social-links .github-social-btn:hover {
-  background-color: #333; /* Specific hover for GitHub */
+  background-color: #333;
   color: white;
 }
 .social-links .linkedin-social-btn:hover {
-  background-color: #0077b5; /* Specific hover for LinkedIn */
+  background-color: #0077b5;
   color: white;
 }
 
 #btn-back-to-top {
   @apply fixed bottom-10 right-10 hidden text-xl bg-accent text-accent-foreground p-3 rounded-full shadow-lg;
   animation: pulse-subtle 2s infinite ease-in-out;
+}
+
+/* Keyframes for animations */
+@keyframes floatAnimationHorizontal {
+  0%,
+  100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes fadeInDelayed {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
 }
