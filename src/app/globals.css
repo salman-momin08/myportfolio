@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    --background: 210 33% 96%; /* Off White #F0F4F8 */
-    --foreground: 180 25% 37%; /* Dark Slate Gray #2F4F4F - New main text color */
+    --background: 40 50% 98%; /* Very Light Beige / Cream #FDFBF6 */
+    --foreground: 180 25% 37%; /* Dark Slate Gray #2F4F4F - Main text color */
 
     --card: 0 0% 100%; /* White */
     --card-foreground: 180 25% 37%; /* Dark Slate Gray */
@@ -19,7 +19,7 @@
     --secondary: 164 100% 70%;  /* Teal #64FFDA */
     --secondary-foreground: 213 78% 11%; /* Navy Blue #0A192F - Text on Teal */
 
-    --muted: 214 16% 89%;    /* Medium Light Grey #DDE1E6 */
+    --muted: 210 20% 94%;    /* Lighter Gray for muted backgrounds against beige */
     --muted-foreground: 0 0% 35%; /* Medium Gray #595959 - For less prominent text */
 
     --accent: 195 100% 50%;   /* Sky Blue #00BFFF */
@@ -28,8 +28,8 @@
     --destructive: 0 72% 51%; /* Default Red */
     --destructive-foreground: 0 0% 98%; /* Default White */
 
-    --border: 210 20% 85%; /* Light Gray border */
-    --input: 210 20% 85%;  /* Light Gray input border */
+    --border: 210 20% 88%; /* Slightly darker light gray border for beige */
+    --input: 210 20% 88%;  /* Slightly darker light gray input border for beige */
     --ring: 195 100% 50%;   /* Sky Blue for rings */
 
     --radius: 0.5rem;
@@ -105,7 +105,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply bg-background text-foreground font-sans; /* Use font-sans from tailwind config */
     font-weight: 400;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
@@ -113,13 +113,17 @@
      @apply py-16 md:py-24 lg:py-32 px-4 md:px-6;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-poppins;
+    @apply font-poppins text-primary; /* Default headings to primary color */
   }
+  h4, h5, h6 { /* Sub-headings use main foreground (Dark Slate Gray) */
+    @apply text-foreground;
+  }
+
   .heading small{
     @apply text-primary text-lg font-semibold font-poppins;
   }
   .heading h3{
-    @apply mt-2 text-primary text-3xl font-bold sm:text-4xl md:text-5xl tracking-normal font-poppins; /* Changed to text-primary */
+    @apply mt-2 text-3xl font-bold sm:text-4xl md:text-5xl tracking-normal font-poppins text-accent; /* Section titles use accent color */
   }
 }
 
@@ -138,7 +142,7 @@
     display: inline-block;
     width: 2px;
     height: 1em;
-    background-color: hsl(var(--primary));
+    background-color: hsl(var(--accent)); /* Cursor matches accent color */
     animation: blink-caret 0.75s step-end infinite;
     margin-left: 2px;
     vertical-align: text-bottom;
