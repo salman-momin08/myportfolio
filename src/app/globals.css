@@ -1,111 +1,116 @@
+/* Tailwind Base Directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* CSS Variable Definitions */
 @layer base {
   :root {
-    --background: 40 50% 98%; /* Very Light Beige / Cream #FDFBF6 */
-    --foreground: 180 25% 37%; /* Dark Slate Gray #2F4F4F - Main text color */
+    --background: 210 100% 98%; /* #F5F9FF (Soft bluish-white) */
+    --foreground: 0 0% 10%; /* #1A1A1A (Dark Gray/Black for main headings) */
+    --body-text-color: 210 9% 31%; /* #495057 (Softer dark gray for body) */
 
     --card: 0 0% 100%; /* White */
-    --card-foreground: 180 25% 37%; /* Dark Slate Gray */
+    --card-foreground: 0 0% 10%; /* Dark Gray/Black */
 
     --popover: 0 0% 100%; /* White */
-    --popover-foreground: 180 25% 37%; /* Dark Slate Gray */
+    --popover-foreground: 0 0% 10%; /* Dark Gray/Black */
 
-    --primary: 213 78% 11%;    /* Navy Blue #0A192F */
-    --primary-foreground: 218 69% 90%; /* Light Gray #CCD6F6 - Text on Navy Blue */
+    --primary: 197 100% 46%; /* #00A8E8 (Vibrant Sky Blue) */
+    --primary-foreground: 0 0% 100%; /* White */
 
-    --secondary: 164 100% 70%;  /* Teal #64FFDA */
-    --secondary-foreground: 213 78% 11%; /* Navy Blue #0A192F - Text on Teal */
+    --secondary: 169 100% 35%; /* #00C49A (Mint Green) */
+    --secondary-foreground: 0 0% 100%; /* White */
 
-    --muted: 210 20% 94%;    /* Lighter Gray for muted backgrounds against beige */
-    --muted-foreground: 0 0% 35%; /* Medium Gray #595959 - For less prominent text */
+    --muted: 210 17% 93%; /* Lighter gray for muted backgrounds */
+    --muted-foreground: 210 9% 45%; /* Medium Gray for muted text */
 
-    --accent: 195 100% 50%;   /* Sky Blue #00BFFF */
-    --accent-foreground: 0 0% 100%; /* White #FFFFFF - Text on Sky Blue */
+    --accent: 197 100% 46%; /* #00A8E8 (Vibrant Sky Blue - same as primary) */
+    --accent-foreground: 0 0% 100%; /* White */
 
     --destructive: 0 72% 51%; /* Default Red */
     --destructive-foreground: 0 0% 98%; /* Default White */
 
-    --border: 210 20% 88%; /* Slightly darker light gray border for beige */
-    --input: 210 20% 88%;  /* Slightly darker light gray input border for beige */
-    --ring: 195 100% 50%;   /* Sky Blue for rings */
+    --border: 206 100% 90%; /* #CCEFFF (Light Sky Blue for borders) */
+    --input: 206 100% 90%;  /* Light Sky Blue for input borders */
+    --ring: 197 100% 46%;   /* Vibrant Sky Blue for rings */
 
     --radius: 0.5rem;
 
-    /* Chart colors - Light Theme */
-    --chart-1: 213 78% 11%; /* Navy Blue */
-    --chart-2: 195 100% 50%; /* Sky Blue */
-    --chart-3: 164 100% 70%; /* Teal */
-    --chart-4: 0 0% 40%;   /* Muted Foreground Gray */
-    --chart-5: 195 100% 40%; /* Darker Sky Blue */
+    /* Chart colors */
+    --chart-1: 197 100% 46%; /* Vibrant Sky Blue */
+    --chart-2: 169 100% 35%; /* Mint Green */
+    --chart-3: 197 80% 60%; /* Lighter Sky Blue */
+    --chart-4: 169 80% 50%; /* Lighter Mint Green */
+    --chart-5: 210 10% 50%; /* Neutral Gray for charts */
 
-    /* Sidebar colors - Light Theme */
-    --sidebar-background: 213 78% 11%; /* Navy Blue */
-    --sidebar-foreground: 218 69% 90%;   /* Light Gray */
-    --sidebar-primary: 164 100% 70%;    /* Teal for active items */
-    --sidebar-primary-foreground: 213 78% 11%; /* Navy Blue text on Teal */
-    --sidebar-accent: 195 100% 50%;   /* Sky Blue */
-    --sidebar-accent-foreground: 0 0% 100%; /* White text on Sky Blue */
-    --sidebar-border: 213 70% 20%; /* Slightly lighter Navy for border */
-    --sidebar-ring: 195 100% 50%;   /* Sky Blue */
+    /* Sidebar colors */
+    --sidebar-background: 210 10% 15%; /* Darker version of primary text for sidebar bg */
+    --sidebar-foreground: 210 20% 90%;   /* Light Gray */
+    --sidebar-primary: 197 100% 46%;    /* Vibrant Sky Blue for active items */
+    --sidebar-primary-foreground: 0 0% 100%; /* White text on Vibrant Sky Blue */
+    --sidebar-accent: 169 100% 35%;   /* Mint Green */
+    --sidebar-accent-foreground: 0 0% 100%; /* White text on Mint Green */
+    --sidebar-border: 210 10% 25%; /* Slightly lighter dark for border */
+    --sidebar-ring: 197 100% 46%;   /* Vibrant Sky Blue */
   }
 
   .dark {
-    --background: 213 78% 8%; /* Very Dark Navy */
-    --foreground: 218 69% 90%; /* Light Gray #CCD6F6 */
+    --background: 220 13% 12%; /* Dark Slate Gray / Very Dark Blue */
+    --foreground: 210 20% 94%; /* Light Gray for main headings */
+    --body-text-color: 210 15% 75%; /* Lighter gray for body text */
 
-    --card: 213 75% 12%; /* Dark Navy, slightly lighter than background */
-    --card-foreground: 218 69% 90%;
+    --card: 220 13% 18%; /* Slightly lighter than background */
+    --card-foreground: 210 20% 94%;
 
-    --popover: 213 75% 12%;
-    --popover-foreground: 218 69% 90%;
+    --popover: 220 13% 15%;
+    --popover-foreground: 210 20% 94%;
 
-    --primary: 195 100% 55%;    /* Brighter Sky Blue for Primary Actions */
-    --primary-foreground: 213 78% 11%; /* Dark Navy text on Brighter Sky Blue */
+    --primary: 197 100% 55%;    /* Brighter Sky Blue */
+    --primary-foreground: 220 20% 10%; /* Dark text on bright blue */
 
-    --secondary: 164 100% 65%;  /* Adjusted Teal for dark mode */
-    --secondary-foreground: 213 78% 11%; /* Dark Navy text on Teal */
+    --secondary: 169 100% 45%;  /* Brighter Mint Green */
+    --secondary-foreground: 220 20% 10%; /* Dark text on bright green */
 
-    --muted: 213 70% 15%;    /* Darker Muted Background */
-    --muted-foreground: 218 50% 70%; /* Medium-Light Gray for Muted Text */
+    --muted: 220 13% 22%;    /* Darker Muted Background */
+    --muted-foreground: 210 15% 60%; /* Medium-Light Gray for Muted Text */
 
-    --accent: 164 100% 70%;   /* Teal as main accent in dark mode */
-    --accent-foreground: 213 78% 11%; /* Dark Navy text on Teal */
+    --accent: 197 100% 55%;   /* Brighter Sky Blue */
+    --accent-foreground: 220 20% 10%; /* Dark text on accent */
 
-    --destructive: 0 60% 50%; /* Slightly less intense Red for dark mode */
+    --destructive: 0 60% 50%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 213 70% 25%; /* Darker Border */
-    --input: 213 70% 25%;  /* Darker Input Border */
-    --ring: 195 100% 55%;   /* Brighter Sky Blue for rings */
+    --border: 220 13% 30%; /* Darker Border */
+    --input: 220 13% 30%;  /* Darker Input Border */
+    --ring: 197 100% 55%;   /* Brighter Sky Blue for rings */
 
     /* Chart colors - Dark Theme */
-    --chart-1: 195 100% 55%; /* Brighter Sky Blue */
-    --chart-2: 164 100% 70%; /* Teal */
-    --chart-3: 0 60% 50%;    /* Destructive Red */
-    --chart-4: 218 50% 70%;   /* Muted Foreground Gray */
-    --chart-5: 164 100% 55%; /* Darker Teal */
+    --chart-1: 197 100% 55%; /* Brighter Sky Blue */
+    --chart-2: 169 100% 45%; /* Brighter Mint Green */
+    --chart-3: 197 80% 70%;  /* Lighter Sky Blue */
+    --chart-4: 169 80% 60%;  /* Lighter Mint Green */
+    --chart-5: 210 15% 65%;   /* Light Neutral Gray */
 
     /* Sidebar colors - Dark Theme */
-    --sidebar-background: 213 75% 10%; /* Dark Navy */
-    --sidebar-foreground: 218 69% 90%;   /* Light Gray */
-    --sidebar-primary: 164 100% 70%;    /* Teal */
-    --sidebar-primary-foreground: 213 78% 11%; /* Dark Navy */
-    --sidebar-accent: 195 100% 55%;   /* Brighter Sky Blue */
-    --sidebar-accent-foreground: 213 78% 11%; /* Dark Navy */
-    --sidebar-border: 213 70% 20%; /* Darker Border */
-    --sidebar-ring: 195 100% 55%;   /* Brighter Sky Blue */
+    --sidebar-background: 220 13% 10%; /* Even Darker Navy */
+    --sidebar-foreground: 210 20% 90%;   /* Light Gray */
+    --sidebar-primary: 197 100% 55%;    /* Brighter Sky Blue */
+    --sidebar-primary-foreground: 220 20% 10%; /* Dark Navy */
+    --sidebar-accent: 169 100% 45%;   /* Brighter Mint Green */
+    --sidebar-accent-foreground: 220 20% 10%; /* Dark Navy */
+    --sidebar-border: 220 13% 20%; /* Darker Border */
+    --sidebar-ring: 197 100% 55%;   /* Brighter Sky Blue */
   }
 }
 
+/* Base HTML Element Styling */
 @layer base {
   * {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-sans; /* Use font-sans from tailwind config */
+    @apply bg-background text-[hsl(var(--body-text-color))] font-inter;
     font-weight: 400;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
@@ -113,20 +118,26 @@
      @apply py-16 md:py-24 lg:py-32 px-4 md:px-6;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-poppins text-primary; /* Default headings to primary color */
+    @apply font-poppins text-[hsl(var(--foreground))]; /* Default headings to main foreground */
   }
-  h4, h5, h6 { /* Sub-headings use main foreground (Dark Slate Gray) */
-    @apply text-foreground;
+  
+  h1 { @apply tracking-tight; }
+  h2 { @apply tracking-normal; }
+  h3 { @apply tracking-normal; }
+
+  p {
+    @apply leading-relaxed tracking-wide;
   }
 
   .heading small{
     @apply text-primary text-lg font-semibold font-poppins;
   }
   .heading h3{
-    @apply mt-2 text-3xl font-bold sm:text-4xl md:text-5xl tracking-normal font-poppins text-accent; /* Section titles use accent color */
+    @apply mt-2 text-3xl font-bold sm:text-4xl md:text-5xl tracking-normal font-poppins text-accent;
   }
 }
 
+/* Custom Utility Classes & Animations */
 @layer utilities {
   .animate-scroll {
     opacity: 0;
@@ -142,7 +153,7 @@
     display: inline-block;
     width: 2px;
     height: 1em;
-    background-color: hsl(var(--accent)); /* Cursor matches accent color */
+    background-color: hsl(var(--accent));
     animation: blink-caret 0.75s step-end infinite;
     margin-left: 2px;
     vertical-align: text-bottom;
@@ -151,224 +162,89 @@
   .home-img-animate {
     animation: floatAnimationHorizontal 4s ease-in-out infinite;
   }
+  
+  .animate-floatRight {
+    animation: floatRight 5s ease-in-out infinite;
+  }
+
+  .animate-floatLeft {
+    animation: floatLeft 5s ease-in-out infinite 0.5s; /* Slight delay for opposition */
+  }
 
   .animate-fade-in-delayed {
     animation: fadeInDelayed 0.5s ease-in forwards 0.3s;
-    opacity: 0; /* Start hidden for the animation */
+    opacity: 0;
+  }
+  
+  .header-nav-link {
+    @apply relative text-muted-foreground hover:text-secondary; /* Hover text color to secondary (Mint Green) */
+  }
+  .header-nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-300 ease-out; /* Underline color accent (Sky Blue) */
+    transform-origin: left;
+  }
+  .header-nav-link:hover::after {
+    @apply w-full;
+  }
+  .header-nav-link.active-link {
+    @apply text-primary; /* Primary color (Sky Blue) for active link */
+  }
+  .header-nav-link.active-link::after {
+     @apply w-full bg-primary; /* Primary color for active underline */
   }
 
-  .link-hover-effect {
-    @apply relative after:absolute after:bg-primary after:bottom-0 after:left-1/2 after:h-0.5 after:w-0 after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:left-0;
+  .c-btn { /* General Call-to-Action button style */
+    @apply bg-accent text-accent-foreground hover:bg-accent/90;
   }
 
-  .contact-form .form-control {
-    @apply px-2.5 py-2.5 w-4/5;
+  /* Social Links Buttons in Footer */
+  .social-links button {
+    @apply rounded-full border-none text-lg p-3.5 bg-card shadow-md transition-all duration-300 ease-in-out;
   }
-  .contact-form .form-control:focus {
-    @apply shadow-none border border-accent;
+  .social-links button:hover {
+    @apply text-accent-foreground scale-110;
+  }
+  .social-links .github-social-btn:hover {
+    background-color: #333; /* GitHub black */
+  }
+  .social-links .linkedin-social-btn:hover {
+    background-color: #0077b5; /* LinkedIn blue */
+  }
+
+  #btn-back-to-top {
+    @apply fixed bottom-10 right-10 hidden text-xl bg-accent text-accent-foreground p-3 rounded-full shadow-lg;
+    animation: pulse-subtle 2s infinite ease-in-out;
   }
 }
 
-/* Custom styles from user - integrated or adapted */
-.nav-menu {
-  @apply border-none bg-transparent text-2xl text-accent;
-}
-
-.navbar-nav a{
-  @apply text-foreground relative;
-}
-.navbar-nav a:hover{
-  @apply text-primary;
-}
-.navbar-nav a:after {
-  @apply bg-none block absolute bg-primary transition-all duration-300 ease-out;
-  bottom: 0;
-  content: "";
-  height: 2px;
-  left: 50%;
-  top: 35px;
-  width: 0;
-}
-.navbar-nav a:hover:after {
-  width: 100%;
-  left: 0;
-}
-
-.c-btn {
-  @apply border-none bg-accent text-accent-foreground text-lg;
-}
-
-.h-btn:hover {
-  @apply bg-primary text-primary-foreground;
-  transform: translateY(-5px);
-  transition-duration: 0.3s;
-}
-
-.link {
-  @apply text-accent relative text-lg;
-}
-.link::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  top: 20px;
-  background-color: hsl(var(--primary));
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-.link:hover {
-  @apply text-primary;
-}
-.link:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-.expertise .service-card {
-  @apply text-center p-4 rounded-lg;
-}
-
-.progress-card {
-  @apply p-8 bg-card text-center rounded-xl;
-}
-.progress-card:hover {
-  transform: scale(1.05);
-  transition-duration: 0.3s;
-}
-
-.circular-progress {
-  @apply relative h-32 w-32 rounded-full flex items-center justify-center;
-  background: conic-gradient(hsl(var(--primary)) 3.6deg, hsl(var(--muted)) 0deg);
-}
-.circular-progress::before {
-  content: "";
-  @apply absolute h-[120px] w-[120px] rounded-full bg-card;
-}
-.progress-value {
-  @apply relative text-xl font-semibold text-foreground;
-}
-.text {
-  @apply text-lg font-medium text-muted-foreground;
-}
-
-#myBtnContainer button {
-  @apply border-none text-foreground bg-transparent text-xl font-semibold cursor-pointer inline-block mx-6;
-}
-#myBtnContainer button:hover {
-  @apply text-primary;
-}
-#myBtnContainer button:focus {
-  @apply outline-none;
-}
-
-.testimonial i {
-  @apply text-5xl text-accent;
-}
-.testimonial .nextprev-btn {
-  @apply border-none bg-transparent;
-}
-.prev:hover, .prev-btn:hover {
-  @apply text-primary;
-  transform: translateX(-5px);
-  transition-duration: 0.3s;
-}
-.next:hover, .next-btn:hover {
-  @apply text-primary;
-  transform: translateX(5px);
-  transition-duration: 0.3s;
-}
-.blog .blogpost small {
-  @apply text-primary text-base;
-}
-.blog .blogpost h4, .blogpost a {
-  @apply text-foreground font-bold mt-4 no-underline;
-}
-.blogpost a:hover {
-  @apply text-primary;
-}
-.blog .blogpost .read-more-btn {
-  @apply no-underline text-accent text-base;
-}
-.blog .blogpost .read-more-btn:hover {
-  @apply text-primary;
-}
-
-.contact-details i {
-  @apply text-2xl text-accent;
-}
-.contact-details p {
-  @apply text-lg ml-4 text-muted-foreground;
-}
-
-footer .link-group a {
-  @apply ml-2.5 mr-2.5 no-underline text-muted-foreground text-base mt-4;
-}
-footer .link-group a:hover {
-  @apply text-accent;
-}
-.social-links button {
-  @apply border-none mr-4 text-lg bg-card p-3.5;
-}
-.social-links button:hover {
-  @apply text-accent-foreground;
-  transform: translateY(-5px);
-  transition-duration: 0.3s;
-}
-.social-links .github-social-btn:hover {
-  background-color: #333;
-  color: white;
-}
-.social-links .linkedin-social-btn:hover {
-  background-color: #0077b5;
-  color: white;
-}
-
-#btn-back-to-top {
-  @apply fixed bottom-10 right-10 hidden text-xl bg-accent text-accent-foreground p-3 rounded-full shadow-lg;
-  animation: pulse-subtle 2s infinite ease-in-out;
-}
-
-/* Keyframes for animations */
+/* Keyframes for Animations */
 @keyframes floatAnimationHorizontal {
-  0%,
-  100% {
-    transform: translateX(0px);
-  }
-  50% {
-    transform: translateX(10px);
-  }
+  0%, 100% { transform: translateX(0px); }
+  50% { transform: translateX(10px); }
+}
+
+@keyframes floatRight {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+}
+
+@keyframes floatLeft {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-10px); }
 }
 
 @keyframes fadeInDelayed {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @keyframes blink-caret {
-  from,
-  to {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 @keyframes pulse-subtle {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.8;
-  }
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.08); opacity: 0.85; }
 }
