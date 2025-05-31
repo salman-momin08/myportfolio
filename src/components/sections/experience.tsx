@@ -25,12 +25,10 @@ export function ExperienceSection() {
           Journey
         </h2>
         <div className={cn(
-          "items-start",
-          isSingleItem
-            ? "md:grid md:grid-cols-2 md:gap-8" // For single item: 50/50 split (image and card)
-            : "md:grid md:grid-cols-2 md:gap-x-12" // For multiple items: balanced two-column
+          "items-start md:grid md:gap-x-12",
+          isSingleItem ? "md:grid-cols-[1fr_2fr]" : "md:grid-cols-2"
         )}>
-          {/* Image Column - Always present */}
+          {/* Image Column */}
           <div className={cn(
             "hidden md:col-span-1 md:flex flex-col items-center justify-center space-y-8 sticky top-24 self-start animate-scroll"
             )} style={{ animationDelay: '100ms' }}>
@@ -55,14 +53,14 @@ export function ExperienceSection() {
           {/* Timeline/Cards Column */}
           <div className={cn(
              "md:col-span-1",
-             !isSingleItem && "md:pr-8 lg:pr-12" // Padding for multiple items to prevent touching edge
+             !isSingleItem && "md:pr-8 lg:pr-12"
           )}>
             {experienceData.length > 0 ? (
               <div className={cn(
                 "relative space-y-12",
                 "before:absolute before:inset-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary before:to-transparent",
                 "before:ml-5", // Mobile: timeline on the left
-                "md:before:mx-auto md:before:ml-0" // Desktop: timeline centered
+                isSingleItem ? "md:before:mx-auto md:before:ml-0" : "md:before:ml-0" // Desktop: timeline centered for single, left for multiple
                 )}>
                 {experienceData.map((item: ExperienceItem, index) => (
                   <div
@@ -85,11 +83,11 @@ export function ExperienceSection() {
                     <Card className={cn(
                       "relative bg-card shadow-lg max-w-lg",
                       // Mobile positioning:
-                      "ml-14", // Give space for the icon on mobile
+                      "ml-14", // Give space for the icon on mobile (icon is left-5, w-6. Card starts after icon)
                       // Desktop positioning:
                       isSingleItem
-                         ? "md:mx-auto" // Single item: card centered
-                         : "md:ml-[calc(50%_+_0.5rem)]" // Multiple items: card 0.5rem to the right of center timeline
+                         ? "md:mx-auto" // Single item: card centered under centered timeline
+                         : "md:ml-4"   // Multiple items: card 4px to the right of left-aligned timeline
                     )}>
                       <CardHeader>
                         <CardTitle className="text-lg font-semibold text-foreground">{item.role}</CardTitle>
