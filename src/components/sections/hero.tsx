@@ -7,6 +7,7 @@ import { heroData } from '@/lib/data';
 import { useState, useEffect } from 'react';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 import { cn } from '@/lib/utils';
+import { AnimatedSection } from '@/components/animated-section';
 
 export function HeroSection() {
   const primaryName = heroData.preferredName || heroData.name;
@@ -17,66 +18,53 @@ export function HeroSection() {
 
   const [sectionRef, isIntersecting] = useIntersectionObserver({
     threshold: 0.1,
-    triggerOnce: false, // Ensures animation can re-trigger on re-scroll
+    triggerOnce: false, 
   });
 
-  // Effect to reset animation states based on intersection
   useEffect(() => {
     if (isIntersecting) {
-      // When section becomes visible, reset states to allow re-animation.
       setDisplayedPrimaryName('');
       setIsPrimaryTypingComplete(false);
     } else {
-      // When section is not visible, ensure states are reset.
       setDisplayedPrimaryName('');
       setIsPrimaryTypingComplete(false);
     }
-  }, [isIntersecting, primaryName]); // primaryName dependency to re-init if it somehow changes.
+  }, [isIntersecting, primaryName]); 
 
-  // Effect for the typing animation itself
   useEffect(() => {
     let typingTimeoutId: NodeJS.Timeout | undefined;
 
     if (isIntersecting && !isPrimaryTypingComplete && primaryName && displayedPrimaryName.length < primaryName.length) {
-      // If intersecting, not yet complete, and there's more of the name to type
       typingTimeoutId = setTimeout(() => {
         setDisplayedPrimaryName(primaryName.substring(0, displayedPrimaryName.length + 1));
-      }, 200); // Adjusted typing speed to be slower
+      }, 200); 
     } else if (isIntersecting && primaryName && displayedPrimaryName.length === primaryName.length && !isPrimaryTypingComplete) {
-      // If intersecting, name is fully typed, and not yet marked as complete
       setIsPrimaryTypingComplete(true);
     }
 
     return () => {
-      if (typingTimeoutId) clearTimeout(typingTimeoutId); // Cleanup timeout on unmount or re-run
+      if (typingTimeoutId) clearTimeout(typingTimeoutId); 
     };
-  }, [isIntersecting, displayedPrimaryName, primaryName, isPrimaryTypingComplete]); // Dependencies that control the typing flow
+  }, [isIntersecting, displayedPrimaryName, primaryName, isPrimaryTypingComplete]); 
 
   return (
-    <section
-      ref={sectionRef}
+    <AnimatedSection
       id="home"
-      className={cn(
-        "min-h-screen flex items-center justify-center text-center bg-gradient-to-b from-background via-background to-background", // Changed to-secondary to to-background
-        'transition-opacity duration-700 ease-out', // Section fade effect
-        isIntersecting ? 'opacity-100' : 'opacity-0',
-        isIntersecting ? 'in-view' : '' // For child .animate-scroll elements
-      )}
+      ref={sectionRef}
+      className="min-h-screen flex items-center justify-center text-center bg-gradient-to-b from-background via-background to-background"
     >
       <div className="space-y-6">
         <h1 className={cn(
           "text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl text-foreground tracking-tight",
-           isIntersecting ? "animate-scroll" : "" // H1 scroll animation
+           isIntersecting ? "animate-scroll" : "" 
         )} style={{ animationDelay: '0ms' }}>
           Hi, I'm{' '}
-          <span className="text-accent"> {/* Changed from text-primary to text-accent */}
+          <span className="text-accent"> 
             {displayedPrimaryName}
-            {/* Typing cursor */}
             {isIntersecting && !isPrimaryTypingComplete && primaryName && displayedPrimaryName.length < primaryName.length && (
               <span className="typing-cursor" />
             )}
           </span>
-          {/* Secondary name, fades in after primary name typing is complete */}
           {isPrimaryTypingComplete && secondaryNameDisplay && (
             <span className={cn("text-2xl text-muted-foreground ml-2", isIntersecting ? "animate-fade-in-delayed" : "opacity-0")}>
               {secondaryNameDisplay}
@@ -86,7 +74,7 @@ export function HeroSection() {
         <p className={cn("mx-auto max-w-[700px] text-muted-foreground md:text-xl leading-relaxed tracking-wide", isIntersecting ? "animate-scroll" : "")} style={{ animationDelay: '100ms' }}>
           {heroData.title}
         </p>
-         <p className={cn("mx-auto max-w-[600px] text-lg text-secondary-foreground leading-relaxed tracking-wide", isIntersecting ? "animate-scroll" : "")} style={{ animationDelay: '200ms' }}>
+         <p className={cn("mx-auto max-w-[600px] text-lg leading-relaxed tracking-wide", isIntersecting ? "animate-scroll" : "")} style={{ animationDelay: '200ms' }}>
           {heroData.subtitle}
         </p>
         <div className={cn(isIntersecting ? "animate-scroll" : "")} style={{ animationDelay: '300ms' }}>
@@ -95,6 +83,6 @@ export function HeroSection() {
           </Button>
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 }
