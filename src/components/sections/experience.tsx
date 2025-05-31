@@ -27,13 +27,13 @@ export function ExperienceSection() {
         <div className={cn(
           "md:grid items-start",
           isSingleItem
-            ? "md:grid-cols-2 md:gap-8"
-            : "md:grid-cols-[1fr_2fr] md:gap-12 lg:grid-cols-[1fr_2fr]"
+            ? "md:grid-cols-2 md:gap-8" // For single item: 50/50 split
+            : "md:grid-cols-[1fr_2fr] md:gap-12" // For multiple items: Image column narrower than timeline
         )}>
           {/* Image Column */}
           <div className={cn(
             "hidden md:col-span-1 md:flex flex-col items-center justify-center space-y-8 sticky top-24 self-start animate-scroll",
-             isSingleItem && "md:col-span-1"
+             isSingleItem && "md:col-span-1" // Ensure image column takes its span in single item layout
             )} style={{ animationDelay: '100ms' }}>
             <Image
               src="https://placehold.co/200x300.png"
@@ -55,9 +55,8 @@ export function ExperienceSection() {
 
           {/* Timeline Column */}
           <div className={cn(
-            "md:col-span-1",
-             isSingleItem ? "" : "md:col-span-1 lg:col-span-1",
-            !isSingleItem && "md:pr-8 lg:pr-12"
+             "md:col-span-1", // For single item, timeline also takes its span
+             !isSingleItem && "md:col-span-1 md:pr-8 lg:pr-12" // For multiple items, ensure correct span & padding
           )}>
             {experienceData.length > 0 ? (
               <div className="relative space-y-12 before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary before:to-transparent md:before:mx-auto md:before:ml-0 before:bg-border">
@@ -71,17 +70,16 @@ export function ExperienceSection() {
                   >
                     <div className={cn(
                       "absolute top-1/2 -translate-y-1/2 h-6 w-6 flex items-center justify-center rounded-full shadow-md z-10",
-                      "bg-primary", // Use primary background for the circle
-                      "left-5 -ml-px", // Mobile positioning, -ml-px to align with w-0.5 line
-                      "md:left-1/2 md:-translate-x-1/2" // Desktop centering - Re-added translate for proper centering
+                      "bg-primary",
+                      "left-5 -ml-px", // Mobile: Icon on the left
+                      "md:left-1/2 md:-translate-x-1/2" // Desktop: Icon centered on timeline
                     )}>
                       <item.icon className="w-4 h-4 text-primary-foreground" />
                     </div>
 
                     <Card className={cn(
-                      "relative w-full max-w-lg bg-card shadow-lg",
-                      "ml-12", // Space for the icon on mobile
-                      "md:mx-auto" // Center card in its column on desktop
+                      "relative max-w-lg bg-card shadow-lg",
+                       isSingleItem ? "ml-16 md:mx-auto" : "ml-16 md:ml-[calc(50%_+_2rem)]"
                     )}>
                       <CardHeader>
                         <CardTitle className="text-lg font-semibold text-foreground">{item.role}</CardTitle>
@@ -109,3 +107,4 @@ export function ExperienceSection() {
     </AnimatedSection>
   );
 }
+
