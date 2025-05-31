@@ -207,9 +207,8 @@ export const learningData = {
   achievements: [
     {
       name: "LeetCode Profile",
-      href: "https://leetcode.com/your-leetcode-profile/", // Replace with your actual LeetCode profile URL
-      issuer: "LeetCode",
-      icon: Code, // Or use a specific LeetCode icon if you have one as an SVG
+      href: "https://leetcode.com/your-leetcode-profile/", 
+      icon: Code, 
     },
     {
       name: "Python Crash Course Certificate",
@@ -219,7 +218,8 @@ export const learningData = {
     },
     {
       name: "Explore Generative AI with the Gemini API in Vertex AI Badge",
-      href: "https://www.cloudskillsboost.google/public_profiles/9d8c4976-0a3d-49e3-8ee2-8bdc82e36a32/badges/15047244", 
+      href: "https://www.cloudskillsboost.google/public_profiles/9d8c4976-0a3d-49e3-8ee2-8bdc82e36a32/badges/15047244",
+      issuer: "GoogleCloud",
       icon: Award,
     },
     {
