@@ -79,7 +79,8 @@ export function ExperienceSection() {
 
                     <Card className={cn(
                       "relative max-w-lg bg-card shadow-lg",
-                       isSingleItem ? "ml-16 md:mx-auto" : "ml-16 md:ml-[calc(50%_+_2rem)]"
+                       "ml-14", // Mobile: Card to the right of the icon
+                       isSingleItem ? "md:mx-auto" : "md:ml-[calc(50%_+_2rem)]" // Desktop: Card centered or to the right
                     )}>
                       <CardHeader>
                         <CardTitle className="text-lg font-semibold text-foreground">{item.role}</CardTitle>
@@ -107,4 +108,3 @@ export function ExperienceSection() {
     </AnimatedSection>
   );
 }
-
