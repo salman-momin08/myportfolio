@@ -27,8 +27,8 @@ export function ExperienceSection() {
         <div className={cn(
           "md:grid items-start",
           isSingleItem
-            ? "md:grid-cols-2 md:gap-8"
-            : "md:grid-cols-[1fr_2fr] md:gap-12 lg:grid-cols-[1fr_2fr]"
+            ? "md:grid-cols-2 md:gap-8" // 50/50 split for single item
+            : "md:grid-cols-[1fr_2fr] md:gap-12 lg:grid-cols-[1fr_2fr]" // 1/3 images, 2/3 timeline for multiple
         )}>
           {/* Image Column */}
           <div className="hidden md:col-span-1 md:flex flex-col items-center justify-center space-y-8 sticky top-24 self-start animate-scroll" style={{ animationDelay: '100ms' }}>
@@ -52,9 +52,9 @@ export function ExperienceSection() {
 
           {/* Timeline Column */}
           <div className={cn(
-            "md:col-span-1",
-             isSingleItem ? "" : "md:col-span-1 lg:col-span-1",
-            !isSingleItem && "md:pr-8 lg:pr-12"
+            "md:col-span-1", // For single item, this column takes the other half
+             isSingleItem ? "" : "md:col-span-1 lg:col-span-1", // For multiple items, this column takes 2/3
+            !isSingleItem && "md:pr-8 lg:pr-12" // Padding on the right for multiple items
           )}>
             {experienceData.length > 0 ? (
               <div className="relative space-y-12 before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary before:to-transparent md:before:mx-auto md:before:ml-0 before:bg-border">
@@ -68,16 +68,17 @@ export function ExperienceSection() {
                   >
                     <div className={cn(
                       "absolute top-1/2 -translate-y-1/2 -ml-1 h-6 w-6 flex items-center justify-center rounded-full bg-primary shadow-md",
-                      "left-5",
-                      "md:left-1/2 md:-translate-x-1/2"
+                      "left-5", // Mobile: icon on the left with some margin
+                      "md:left-1/2 md:-translate-x-1/2" // Desktop: icon centered on the timeline
                     )}>
-                      <item.icon className="w-4 h-4 text-primary-foreground" />
+                      {/* Diagnostic: Using text-red-500 for icon color */}
+                      <item.icon className="w-4 h-4 text-red-500" />
                     </div>
 
                     <Card className={cn(
                       "relative w-full max-w-lg bg-card shadow-lg",
-                      "ml-12",
-                      "md:mx-auto"
+                      "ml-12", // Mobile: card starts to the right of the icon
+                      "md:mx-auto" // Desktop: card centers itself in its allocated space
                     )}>
                       <CardHeader>
                         <CardTitle className="text-lg font-semibold text-foreground">{item.role}</CardTitle>
