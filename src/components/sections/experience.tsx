@@ -55,8 +55,8 @@ export function ExperienceSection() {
 
           {/* Timeline Column */}
           <div className={cn(
-             "md:col-span-1", // For single item, timeline also takes its span
-             !isSingleItem && "md:col-span-1 md:pr-8 lg:pr-12" // For multiple items, ensure correct span & padding
+             "md:col-span-1",
+             !isSingleItem && "md:pr-8 lg:pr-12"
           )}>
             {experienceData.length > 0 ? (
               <div className="relative space-y-12 before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary before:to-transparent md:before:mx-auto md:before:ml-0 before:bg-border">
@@ -68,19 +68,21 @@ export function ExperienceSection() {
                     )}
                     style={{ animationDelay: `${(index * 150) + 200}ms` }}
                   >
+                    {/* Icon Container: Visible on mobile, hidden on desktop */}
                     <div className={cn(
                       "absolute top-1/2 -translate-y-1/2 h-6 w-6 flex items-center justify-center rounded-full shadow-md z-10",
                       "bg-primary",
                       "left-5 -ml-px", // Mobile: Icon on the left
-                      "md:left-1/2 md:-translate-x-1/2" // Desktop: Icon centered on timeline
+                      "md:hidden" // Hide on desktop
                     )}>
                       <item.icon className="w-4 h-4 text-primary-foreground" />
                     </div>
 
                     <Card className={cn(
-                      "relative max-w-lg bg-card shadow-lg",
-                       "ml-14", // Mobile: Card to the right of the icon
-                       isSingleItem ? "md:mx-auto" : "md:ml-[calc(50%_+_2rem)]" // Desktop: Card centered or to the right
+                      "relative bg-card shadow-lg max-w-lg",
+                       isSingleItem
+                         ? "ml-14 md:mx-auto" // Mobile: space for icon. Desktop: centered.
+                         : "ml-14 md:ml-[calc(50%_+_1rem)]" // Mobile: space for icon. Desktop: 1rem right of center timeline.
                     )}>
                       <CardHeader>
                         <CardTitle className="text-lg font-semibold text-foreground">{item.role}</CardTitle>
