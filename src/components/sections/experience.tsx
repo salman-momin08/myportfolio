@@ -26,9 +26,10 @@ export function ExperienceSection() {
         </h2>
         <div className={cn(
           "md:grid items-start",
-          isSingleItem ? "md:grid-cols-2 lg:grid-cols-2 md:gap-8" : "md:grid-cols-3 lg:grid-cols-4 md:gap-12"
+          isSingleItem ? "md:grid-cols-2 md:gap-8" : "md:grid-cols-[1fr_2fr] md:gap-12 lg:grid-cols-[1fr_2fr]" 
         )}>
-          <div className="hidden md:col-span-1 lg:col-span-1 md:flex flex-col items-center justify-center space-y-8 sticky top-24 self-start animate-scroll" style={{ animationDelay: '100ms' }}>
+          {/* Image Column */}
+          <div className="hidden md:col-span-1 md:flex flex-col items-center justify-center space-y-8 sticky top-24 self-start animate-scroll" style={{ animationDelay: '100ms' }}>
             <Image
               src="https://placehold.co/200x300.png"
               alt="Journey Image 1"
@@ -47,8 +48,9 @@ export function ExperienceSection() {
             />
           </div>
 
+          {/* Timeline Column */}
           <div className={cn(
-            isSingleItem ? "md:col-span-1 lg:col-span-1" : "md:col-span-2 lg:col-span-3"
+            "md:col-span-1" 
           )}>
             {experienceData.length > 0 ? (
               <div className="relative space-y-12 before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary before:to-transparent md:before:mx-auto md:before:ml-0 before:bg-border">
@@ -56,20 +58,24 @@ export function ExperienceSection() {
                   <div
                     key={index}
                     className={cn(
-                      "relative flex items-center animate-scroll",
-                      isSingleItem ? "md:justify-center" : "md:justify-normal md:odd:flex-row-reverse " + (index % 2 === 0 ? 'md:justify-start' : 'md:justify-end')
+                      "relative animate-scroll" 
                     )}
                     style={{ animationDelay: `${(index * 150) + 200}ms` }}
                   >
                     <div className={cn(
                       "absolute top-1/2 -translate-y-1/2 -ml-1 h-6 w-6 flex items-center justify-center rounded-full bg-primary shadow-md",
-                      isSingleItem ? "left-5 md:left-1/2 md:-translate-x-1/2" : "left-5 md:left-1/2 md:-translate-x-1/2" // This logic for icon remains same, centered on line
+                      "left-5", 
+                      "md:left-1/2 md:-translate-x-1/2" 
                     )}>
                       <item.icon className="w-4 h-4 text-primary-foreground" />
                     </div>
+
                     <Card className={cn(
                       "relative w-full max-w-md bg-card shadow-lg",
-                      isSingleItem ? "ml-12 md:ml-0" : "ml-12 md:ml-0 md:odd:mr-10 md:even:ml-10"
+                      "ml-12", 
+                      isSingleItem 
+                        ? "md:mx-auto" 
+                        : "md:ml-[calc(50%_+_2rem)]" // 2rem (32px) gap from the center line
                     )}>
                       <CardHeader>
                         <CardTitle className="text-lg font-semibold text-foreground">{item.role}</CardTitle>
