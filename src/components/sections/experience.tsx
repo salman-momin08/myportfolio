@@ -76,9 +76,7 @@ export function ExperienceSection() {
                     <Card className={cn(
                       "relative w-full max-w-lg bg-card shadow-lg", // Card can take full width up to max-w-lg
                       "ml-12", // Mobile: card shifted right of icon
-                      isSingleItem
-                        ? "md:mx-auto" // Desktop single item: card centered in its column
-                        : "md:ml-[calc(50%_+_2rem)]" // Desktop multiple items: card starts 2rem right of center line
+                      "md:mx-auto" // Desktop: card centered in its column for both single and multiple items
                     )}>
                       <CardHeader>
                         <CardTitle className="text-lg font-semibold text-foreground">{item.role}</CardTitle>
