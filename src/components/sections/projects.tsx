@@ -23,12 +23,12 @@ export function ProjectsSection() {
       isIntersecting={isIntersecting}
     >
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl text-center mb-12 text-secondary animate-scroll">
+        <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl text-center mb-12 text-primary animate-scroll">
           Projects
         </h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projectsData.map((project: ProjectItem, index) => (
-            <Card key={index} className="flex flex-col animate-scroll h-full bg-card shadow-lg hover:shadow-xl transition-shadow duration-300" style={{ animationDelay: `${index * 150}ms` }}>
+            <Card key={index} className="flex flex-col animate-scroll h-full bg-card shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out" style={{ animationDelay: `${index * 150}ms` }}>
               <CardHeader>
                  <div className="flex items-center gap-3 mb-2">
                     <project.icon className="w-6 h-6 text-primary" />

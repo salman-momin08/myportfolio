@@ -19,7 +19,7 @@ export function ExperienceSection() {
       isIntersecting={isIntersecting}
     >
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl text-center mb-12 text-secondary animate-scroll">
+        <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl text-center mb-12 text-primary animate-scroll">
           Journey So Far
         </h2>
         <div className="md:grid md:grid-cols-3 lg:grid-cols-4 md:gap-12 items-start">

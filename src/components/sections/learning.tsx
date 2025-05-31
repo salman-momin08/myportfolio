@@ -27,7 +27,7 @@ export function LearningSection() {
               <SectionIcon className="h-12 w-12 text-primary" />
             </div>
           )}
-          <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl text-secondary">
+          <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl text-primary">
             {title}
           </h2>
         </div>
