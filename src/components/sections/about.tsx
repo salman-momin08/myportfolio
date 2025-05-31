@@ -30,9 +30,9 @@ export function AboutSection() {
         </div>
         <div className="flex justify-center animate-scroll" style={{ animationDelay: '200ms' }}>
            <Image
-              src="/images/myimage.jpg"
+              src="/images/aboutpic.jpg"
               alt="About Me Image - Replace with your portrait"
-              width={500}
+              width={400}
               height={500}
               className="rounded-full shadow-lg object-cover aspect-square home-img-animate"
               data-ai-hint="professional portrait developer headshot"
