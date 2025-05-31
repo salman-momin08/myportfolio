@@ -25,12 +25,12 @@ export function ExperienceSection() {
           Journey
         </h2>
         <div className={cn(
-          "md:grid items-start",
+          "items-start",
           isSingleItem
-            ? "md:grid-cols-2 md:gap-8" // For single item: 50/50 split
-            : "md:grid-cols-2 md:gap-x-12" // For multiple items: balanced two-column
+            ? "md:grid md:grid-cols-2 md:gap-8" // For single item: 50/50 split (image and card)
+            : "md:grid md:grid-cols-2 md:gap-x-12" // For multiple items: balanced two-column
         )}>
-          {/* Image Column */}
+          {/* Image Column - Always present */}
           <div className={cn(
             "hidden md:col-span-1 md:flex flex-col items-center justify-center space-y-8 sticky top-24 self-start animate-scroll"
             )} style={{ animationDelay: '100ms' }}>
@@ -52,13 +52,18 @@ export function ExperienceSection() {
             />
           </div>
 
-          {/* Timeline Column */}
+          {/* Timeline/Cards Column */}
           <div className={cn(
-             "md:col-span-1", // This column takes the second half in a 2-col grid
+             "md:col-span-1",
              !isSingleItem && "md:pr-8 lg:pr-12" // Padding for multiple items to prevent touching edge
           )}>
             {experienceData.length > 0 ? (
-              <div className="relative space-y-12 before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary before:to-transparent md:before:mx-auto md:before:ml-0 before:bg-border">
+              <div className={cn(
+                "relative space-y-12",
+                "before:absolute before:inset-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary before:to-transparent",
+                "before:ml-5", // Mobile: timeline on the left
+                "md:before:mx-auto md:before:ml-0" // Desktop: timeline centered
+                )}>
                 {experienceData.map((item: ExperienceItem, index) => (
                   <div
                     key={index}
@@ -72,16 +77,19 @@ export function ExperienceSection() {
                       "absolute top-1/2 -translate-y-1/2 h-6 w-6 flex items-center justify-center rounded-full shadow-md z-10",
                       "bg-primary",
                       "left-5 -ml-px", // Mobile: Icon on the left
-                      "md:hidden" // Hide on desktop and larger
+                      "md:hidden" // Hide on desktop
                     )}>
                       <item.icon className="w-4 h-4 text-primary-foreground" />
                     </div>
 
                     <Card className={cn(
                       "relative bg-card shadow-lg max-w-lg",
+                      // Mobile positioning:
+                      "ml-14", // Give space for the icon on mobile
+                      // Desktop positioning:
                       isSingleItem
-                         ? "ml-14 md:mx-auto" // Mobile: space for icon. Desktop (single): centered.
-                         : "ml-14 md:ml-[calc(50%_+_1rem)]" // Mobile: space for icon. Desktop (multiple): 1rem right of center timeline.
+                         ? "md:mx-auto" // Single item: card centered
+                         : "md:ml-[calc(50%_+_0.5rem)]" // Multiple items: card 0.5rem to the right of center timeline
                     )}>
                       <CardHeader>
                         <CardTitle className="text-lg font-semibold text-foreground">{item.role}</CardTitle>
