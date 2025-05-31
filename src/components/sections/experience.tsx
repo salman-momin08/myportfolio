@@ -33,7 +33,7 @@ export function ExperienceSection() {
           {/* Image Column */}
           <div className={cn(
             "hidden md:col-span-1 md:flex flex-col items-center justify-center space-y-8 sticky top-24 self-start animate-scroll",
-            isSingleItem && "md:col-span-1" // For single item, image column takes half
+             isSingleItem && "md:col-span-1"
             )} style={{ animationDelay: '100ms' }}>
             <Image
               src="https://placehold.co/200x300.png"
@@ -70,17 +70,17 @@ export function ExperienceSection() {
                     style={{ animationDelay: `${(index * 150) + 200}ms` }}
                   >
                     <div className={cn(
-                      "absolute top-1/2 -translate-y-1/2 -ml-1 h-6 w-6 flex items-center justify-center rounded-full shadow-md",
-                      "bg-red-500 border-4 border-green-500", // Diagnostic: Hardcoded background and border
-                      "left-5",
-                      "md:left-1/2 md:-translate-x-1/2"
+                      "absolute top-1/2 -translate-y-1/2 h-6 w-6 flex items-center justify-center rounded-full shadow-md z-10",
+                      "bg-primary", // Use primary background for the circle
+                      "left-5 -ml-px", // Mobile positioning, -ml-px to align with w-0.5 line
+                      "md:left-1/2 md:-translate-x-1/2" // Desktop centering - Re-added translate for proper centering
                     )}>
-                      <item.icon className="w-4 h-4 text-black" /> {/* Diagnostic: Hardcoded icon color */}
+                      <item.icon className="w-4 h-4 text-primary-foreground" />
                     </div>
 
                     <Card className={cn(
                       "relative w-full max-w-lg bg-card shadow-lg",
-                      "ml-12",
+                      "ml-12", // Space for the icon on mobile
                       "md:mx-auto" // Center card in its column on desktop
                     )}>
                       <CardHeader>
