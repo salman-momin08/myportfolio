@@ -22,18 +22,17 @@ export function ExperienceSection() {
     >
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl text-center mb-12 text-primary animate-scroll">
-          Journey So Far
+          Journey
         </h2>
         <div className={cn(
           "md:grid items-start",
           isSingleItem
             ? "md:grid-cols-2 md:gap-8" // For single item: 50/50 split
-            : "md:grid-cols-[1fr_2fr] md:gap-12" // For multiple items: Image column narrower than timeline
+            : "md:grid-cols-2 md:gap-x-12" // For multiple items: balanced two-column
         )}>
           {/* Image Column */}
           <div className={cn(
-            "hidden md:col-span-1 md:flex flex-col items-center justify-center space-y-8 sticky top-24 self-start animate-scroll",
-             isSingleItem && "md:col-span-1" // Ensure image column takes its span in single item layout
+            "hidden md:col-span-1 md:flex flex-col items-center justify-center space-y-8 sticky top-24 self-start animate-scroll"
             )} style={{ animationDelay: '100ms' }}>
             <Image
               src="https://placehold.co/200x300.png"
@@ -55,8 +54,8 @@ export function ExperienceSection() {
 
           {/* Timeline Column */}
           <div className={cn(
-             "md:col-span-1",
-             !isSingleItem && "md:pr-8 lg:pr-12"
+             "md:col-span-1", // This column takes the second half in a 2-col grid
+             !isSingleItem && "md:pr-8 lg:pr-12" // Padding for multiple items to prevent touching edge
           )}>
             {experienceData.length > 0 ? (
               <div className="relative space-y-12 before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary before:to-transparent md:before:mx-auto md:before:ml-0 before:bg-border">
@@ -73,16 +72,16 @@ export function ExperienceSection() {
                       "absolute top-1/2 -translate-y-1/2 h-6 w-6 flex items-center justify-center rounded-full shadow-md z-10",
                       "bg-primary",
                       "left-5 -ml-px", // Mobile: Icon on the left
-                      "md:hidden" // Hide on desktop
+                      "md:hidden" // Hide on desktop and larger
                     )}>
                       <item.icon className="w-4 h-4 text-primary-foreground" />
                     </div>
 
                     <Card className={cn(
                       "relative bg-card shadow-lg max-w-lg",
-                       isSingleItem
-                         ? "ml-14 md:mx-auto" // Mobile: space for icon. Desktop: centered.
-                         : "ml-14 md:ml-[calc(50%_+_1rem)]" // Mobile: space for icon. Desktop: 1rem right of center timeline.
+                      isSingleItem
+                         ? "ml-14 md:mx-auto" // Mobile: space for icon. Desktop (single): centered.
+                         : "ml-14 md:ml-[calc(50%_+_1rem)]" // Mobile: space for icon. Desktop (multiple): 1rem right of center timeline.
                     )}>
                       <CardHeader>
                         <CardTitle className="text-lg font-semibold text-foreground">{item.role}</CardTitle>
