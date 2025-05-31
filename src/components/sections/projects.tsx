@@ -68,5 +68,3 @@ export function ProjectsSection() {
     </AnimatedSection>
   );
 }
-
-    

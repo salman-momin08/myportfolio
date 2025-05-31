@@ -53,8 +53,8 @@ export function ExperienceSection() {
           {/* Timeline Column */}
           <div className={cn(
             "md:col-span-1",
-             isSingleItem ? "" : "md:col-span-1 lg:col-span-1", // Adjust for multiple items to take one part of the 2fr
-            !isSingleItem && "md:pr-8 lg:pr-12" 
+             isSingleItem ? "" : "md:col-span-1 lg:col-span-1",
+            !isSingleItem && "md:pr-8 lg:pr-12"
           )}>
             {experienceData.length > 0 ? (
               <div className="relative space-y-12 before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary before:to-transparent md:before:mx-auto md:before:ml-0 before:bg-border">
@@ -68,16 +68,16 @@ export function ExperienceSection() {
                   >
                     <div className={cn(
                       "absolute top-1/2 -translate-y-1/2 -ml-1 h-6 w-6 flex items-center justify-center rounded-full bg-primary shadow-md",
-                      "left-5", 
-                      "md:left-1/2 md:-translate-x-1/2" 
+                      "left-5",
+                      "md:left-1/2 md:-translate-x-1/2"
                     )}>
                       <item.icon className="w-4 h-4 text-primary-foreground" />
                     </div>
 
                     <Card className={cn(
-                      "relative w-full max-w-lg bg-card shadow-lg", 
-                      "ml-12", 
-                      "md:mx-auto" 
+                      "relative w-full max-w-lg bg-card shadow-lg",
+                      "ml-12",
+                      "md:mx-auto"
                     )}>
                       <CardHeader>
                         <CardTitle className="text-lg font-semibold text-foreground">{item.role}</CardTitle>
@@ -105,5 +105,3 @@ export function ExperienceSection() {
     </AnimatedSection>
   );
 }
-
-    

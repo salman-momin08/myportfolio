@@ -89,7 +89,7 @@ export const experienceData: ExperienceItem[] = [
       'Continuously learning new technologies and best practices in web development.',
       'Eager to contribute to a team and learn from experienced professionals.',
     ],
-    icon: Target, // Ensure Target is correctly assigned
+    icon: Target,
   },
   {
     company: 'Leosias Technologies',
@@ -101,7 +101,7 @@ export const experienceData: ExperienceItem[] = [
       'Engineered AQI project to find the insights of the top 5 metropolitan cities.',
       'Helps the users to analyze better air quality to live in. ',
     ],
-    icon: Briefcase, // Ensure Briefcase is correctly assigned
+    icon: Briefcase,
   },
 ];
 
@@ -252,5 +252,3 @@ export const contactData = {
 export const footerData = {
   text: `© ${new Date().getFullYear()} ${heroData.preferredName || heroData.name}. `
 }
-
-    
