@@ -26,7 +26,9 @@ export function ExperienceSection() {
         </h2>
         <div className={cn(
           "md:grid items-start",
-          isSingleItem ? "md:grid-cols-2 md:gap-8" : "md:grid-cols-[1fr_2fr] md:gap-12 lg:grid-cols-[1fr_2fr]" 
+          isSingleItem 
+            ? "md:grid-cols-2 md:gap-8" 
+            : "md:grid-cols-[1fr_2fr] md:gap-12 lg:grid-cols-[1fr_2fr]" 
         )}>
           {/* Image Column */}
           <div className="hidden md:col-span-1 md:flex flex-col items-center justify-center space-y-8 sticky top-24 self-start animate-scroll" style={{ animationDelay: '100ms' }}>
@@ -71,11 +73,11 @@ export function ExperienceSection() {
                     </div>
 
                     <Card className={cn(
-                      "relative w-full max-w-md bg-card shadow-lg",
+                      "relative w-full max-w-lg bg-card shadow-lg", // Changed max-w-md to max-w-lg
                       "ml-12", 
                       isSingleItem 
                         ? "md:mx-auto" 
-                        : "md:ml-[calc(50%_+_2rem)]" // 2rem (32px) gap from the center line
+                        : "md:ml-[calc(50%_+_2rem)]" 
                     )}>
                       <CardHeader>
                         <CardTitle className="text-lg font-semibold text-foreground">{item.role}</CardTitle>
