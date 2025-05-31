@@ -93,7 +93,7 @@ export const experienceData: ExperienceItem[] = [
   },
   {
     company: 'Leosias Technologies',
-    role: 'Data Analyst',
+    role: 'Data Analyst Intern',
     period: 'Nov 2024 - Jan 2025',
     description: [
       'Learnt various technologies of Data Preprocessing and Visualizations.',

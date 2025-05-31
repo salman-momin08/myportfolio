@@ -22,7 +22,7 @@ export function ExperienceSection() {
     >
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl text-center mb-12 text-primary animate-scroll">
-          Journey
+          Journey So Far
         </h2>
         <div className={cn(
           "items-start md:grid md:gap-x-12",
@@ -35,16 +35,16 @@ export function ExperienceSection() {
             <Image
               src="/images/imageone.jpg"
               alt="Journey Image 1"
-              width={300}
-              height={350}
+              width={200}
+              height={200}
               className="rounded-lg shadow-xl object-cover animate-floatRight"
               data-ai-hint="coding journey"
             />
             <Image
               src="/images/imagetwo.jpg"
               alt="Journey Image 2"
-              width={300}
-              height={350}
+              width={200}
+              height={200}
               className="rounded-lg shadow-xl object-cover animate-floatLeft"
               data-ai-hint="career growth"
             />
