@@ -33,18 +33,18 @@ export function ExperienceSection() {
             "hidden md:col-span-1 md:flex flex-col items-center justify-center space-y-8 sticky top-24 self-start animate-scroll"
             )} style={{ animationDelay: '100ms' }}>
             <Image
-              src="https://placehold.co/200x300.png"
+              src="/images/imageone.jpg"
               alt="Journey Image 1"
-              width={200}
-              height={300}
+              width={300}
+              height={350}
               className="rounded-lg shadow-xl object-cover animate-floatRight"
               data-ai-hint="coding journey"
             />
             <Image
-              src="https://placehold.co/200x300.png"
+              src="/images/imagetwo.jpg"
               alt="Journey Image 2"
-              width={200}
-              height={300}
+              width={300}
+              height={350}
               className="rounded-lg shadow-xl object-cover animate-floatLeft"
               data-ai-hint="career growth"
             />

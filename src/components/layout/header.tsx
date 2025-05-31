@@ -1,11 +1,12 @@
+
 'use client';
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, Mountain } from 'lucide-react';
-import { navItems, heroData } from '@/lib/data'; // Import heroData
+import { navItems, heroData } from '@/lib/data';
 import type { NavItem } from '@/lib/data';
 import { cn } from '@/lib/utils';
 
@@ -44,7 +45,7 @@ export function Header() {
     setIsMobileMenuOpen(false);
   };
 
-  const displayName = heroData.preferredName || heroData.name; // Use preferred name if available
+  const displayName = heroData.preferredName || heroData.name;
 
   return (
     <header
@@ -56,7 +57,7 @@ export function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="#home" className="flex items-center gap-2" prefetch={false}>
           <Mountain className="h-6 w-6 text-primary" />
-          <span className="text-lg font-semibold text-foreground">{displayName}</span> {/* Display preferred name */}
+          <span className="text-lg font-semibold text-foreground">{displayName}</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -85,6 +86,9 @@ export function Header() {
             </Button>
           </SheetTrigger>
           <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+            <SheetHeader>
+              <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+            </SheetHeader>
             <nav className="mt-8 flex flex-col gap-4">
               {navItems.map((item: NavItem) => (
                 <Link
