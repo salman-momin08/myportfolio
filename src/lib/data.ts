@@ -1,5 +1,6 @@
+
 import type { LucideIcon } from 'lucide-react';
-import { Github, Linkedin, Mail, Briefcase, GraduationCap, Wrench, FolderKanban, Code, Target, ExternalLink, Brain, Award } from 'lucide-react'; // Added Brain, Award icons
+import { Github, Linkedin, Mail, Briefcase, GraduationCap, Wrench, FolderKanban, Code, Target, ExternalLink, Brain, Award } from 'lucide-react';
 
 export interface NavItem {
   name: string;
@@ -24,7 +25,7 @@ export interface ProjectItem {
   title: string;
   description: string;
   tags: string[];
-  link?: string; 
+  link?: string;
   webLink?: string;
   icon: LucideIcon;
 }
@@ -45,7 +46,7 @@ export interface SkillCategory {
 export interface AchievementItem {
   name: string;
   href: string;
-  issuer?: string; // e.g., "LeetCode", "Coursera"
+  issuer?: string;
   icon: LucideIcon;
 }
 
@@ -54,7 +55,7 @@ export const navItems: NavItem[] = [
   { name: 'Experience', href: '#experience' },
   { name: 'Projects', href: '#projects' },
   { name: 'Skills', href: '#skills' },
-  { name: 'Learning', href: '#learning' }, // Added Learning section
+  { name: 'Learning', href: '#learning' },
   { name: 'Education', href: '#education' },
   { name: 'Contact', href: '#contact' },
 ];
@@ -88,7 +89,7 @@ export const experienceData: ExperienceItem[] = [
       'Continuously learning new technologies and best practices in web development.',
       'Eager to contribute to a team and learn from experienced professionals.',
     ],
-    icon: Target,
+    icon: Target, // Ensure Target is correctly assigned
   },
   {
     company: 'Leosias Technologies',
@@ -100,7 +101,7 @@ export const experienceData: ExperienceItem[] = [
       'Engineered AQI project to find the insights of the top 5 metropolitan cities.',
       'Helps the users to analyze better air quality to live in. ',
     ],
-    icon: Briefcase,
+    icon: Briefcase, // Ensure Briefcase is correctly assigned
   },
 ];
 
@@ -207,13 +208,13 @@ export const learningData = {
   achievements: [
     {
       name: "LeetCode Profile",
-      href: "https://leetcode.com/your-leetcode-profile/", 
-      icon: Code, 
+      href: "https://leetcode.com/your-leetcode-profile/",
+      icon: Code,
     },
     {
       name: "Python Crash Course Certificate",
-      href: "https://drive.google.com/file/d/1jE--sHyw6NNpHP3VOAqTodpr5chhd71b/view?usp=drive_lin", 
-      issuer: "Coursera", 
+      href: "https://drive.google.com/file/d/1jE--sHyw6NNpHP3VOAqTodpr5chhd71b/view?usp=drive_lin",
+      issuer: "Coursera",
       icon: Award,
     },
     {
@@ -224,13 +225,13 @@ export const learningData = {
     },
     {
       name: "Build Real World AI Applications with Gemini and Imagen",
-      href: "https://www.cloudskillsboost.google/public_profiles/9d8c4976-0a3d-49e3-8ee2-8bdc82e36a32/badges/15043630", 
+      href: "https://www.cloudskillsboost.google/public_profiles/9d8c4976-0a3d-49e3-8ee2-8bdc82e36a32/badges/15043630",
       issuer: "GoogleCloud",
       icon: Award,
     },
     {
       name: "Prompt Design in Vertex AI",
-      href: "https://www.cloudskillsboost.google/public_profiles/9d8c4976-0a3d-49e3-8ee2-8bdc82e36a32/badges/15021425", 
+      href: "https://www.cloudskillsboost.google/public_profiles/9d8c4976-0a3d-49e3-8ee2-8bdc82e36a32/badges/15021425",
       issuer: "GoogleCloud",
       icon: Award,
     },
@@ -251,3 +252,5 @@ export const contactData = {
 export const footerData = {
   text: `© ${new Date().getFullYear()} ${heroData.preferredName || heroData.name}. `
 }
+
+    

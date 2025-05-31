@@ -34,7 +34,7 @@ export function ProjectsSection() {
                     <project.icon className="w-6 h-6 text-primary" />
                     <CardTitle className="text-xl font-semibold text-foreground">{project.title}</CardTitle>
                  </div>
-                <CardDescription className="text-muted-foreground flex-grow leading-relaxed tracking-wide">{project.description}</CardDescription>
+                <CardDescription className="text-muted-foreground flex-grow leading-relaxed tracking-wide break-words">{project.description}</CardDescription>
               </CardHeader>
               <CardContent className="flex flex-col justify-between flex-grow">
                  <div className="flex flex-wrap gap-2 mb-4">
@@ -68,3 +68,5 @@ export function ProjectsSection() {
     </AnimatedSection>
   );
 }
+
+    
