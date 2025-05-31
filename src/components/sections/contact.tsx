@@ -1,3 +1,6 @@
+
+'use client';
+
 import Link from 'next/link';
 import { contactData } from '@/lib/data';
 import type { ContactLink } from '@/lib/data';
@@ -5,14 +8,22 @@ import { Button } from '@/components/ui/button';
 import { AnimatedSection } from '@/components/animated-section';
 import { Mail } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 
 export function ContactSection() {
+  const [sectionRef, isIntersecting] = useIntersectionObserver({ threshold: 0.1, triggerOnce: true });
+
   return (
-    <AnimatedSection id="contact" className="bg-background text-center"> {/* Changed from bg-secondary to bg-background */}
+    <AnimatedSection
+      id="contact"
+      className="bg-background text-center"
+      ref={sectionRef}
+      isIntersecting={isIntersecting}
+    >
       <div className="container mx-auto max-w-xl">
         <div className="heading animate-scroll">
           <small>Contact</small>
-          <h3 className="text-3xl font-bold sm:text-4xl md:text-5xl mb-4">
+          <h3 className="text-3xl font-bold sm:text-4xl md:text-5xl mb-4 text-secondary">
              {contactData.title}
           </h3>
         </div>

@@ -1,15 +1,25 @@
+
+'use client';
+
 import Link from 'next/link';
 import { learningData } from '@/lib/data';
 import type { AchievementItem } from '@/lib/data';
 import { AnimatedSection } from '@/components/animated-section';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'; // Re-added Card components
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 
 export function LearningSection() {
   const { title, description, achievementsSubtitle, achievements, icon: SectionIcon } = learningData;
+  const [sectionRef, isIntersecting] = useIntersectionObserver({ threshold: 0.1, triggerOnce: true });
 
   return (
-    <AnimatedSection id="learning" className="bg-background py-16 md:py-24 lg:py-32">
+    <AnimatedSection
+      id="learning"
+      className="bg-background py-16 md:py-24 lg:py-32"
+      ref={sectionRef}
+      isIntersecting={isIntersecting}
+    >
       <div className="container mx-auto">
         <div className="heading text-center mb-12 animate-scroll">
           {SectionIcon && (
@@ -17,7 +27,7 @@ export function LearningSection() {
               <SectionIcon className="h-12 w-12 text-primary" />
             </div>
           )}
-          <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl text-primary">
+          <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl text-secondary">
             {title}
           </h2>
         </div>

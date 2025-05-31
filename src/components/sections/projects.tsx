@@ -1,3 +1,6 @@
+
+'use client';
+
 import Link from 'next/link';
 import { projectsData } from '@/lib/data';
 import type { ProjectItem } from '@/lib/data';
@@ -7,17 +10,25 @@ import { Button } from '@/components/ui/button';
 import { Github, ExternalLink } from 'lucide-react';
 import { AnimatedSection } from '@/components/animated-section';
 import { cn } from '@/lib/utils';
+import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 
 export function ProjectsSection() {
+  const [sectionRef, isIntersecting] = useIntersectionObserver({ threshold: 0.1, triggerOnce: true });
+
   return (
-    <AnimatedSection id="projects" className="bg-card"> {/* Section background is white */}
+    <AnimatedSection
+      id="projects"
+      className="bg-card"
+      ref={sectionRef}
+      isIntersecting={isIntersecting}
+    >
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl text-center mb-12 text-primary animate-scroll">
+        <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl text-center mb-12 text-secondary animate-scroll">
           Projects
         </h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projectsData.map((project: ProjectItem, index) => (
-            <Card key={index} className="flex flex-col animate-scroll h-full bg-card shadow-lg hover:shadow-xl transition-shadow duration-300" style={{ animationDelay: `${index * 150}ms` }}> {/* Changed from bg-background to bg-card */}
+            <Card key={index} className="flex flex-col animate-scroll h-full bg-card shadow-lg hover:shadow-xl transition-shadow duration-300" style={{ animationDelay: `${index * 150}ms` }}>
               <CardHeader>
                  <div className="flex items-center gap-3 mb-2">
                     <project.icon className="w-6 h-6 text-primary" />

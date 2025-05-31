@@ -1,14 +1,25 @@
+
+'use client';
+
 import { aboutData } from '@/lib/data';
 import { AnimatedSection } from '@/components/animated-section';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
+import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 
 export function AboutSection() {
+  const [sectionRef, isIntersecting] = useIntersectionObserver({ threshold: 0.1, triggerOnce: true });
+
   return (
-    <AnimatedSection id="about" className="bg-card"> {/* Changed to bg-card (white) */}
+    <AnimatedSection
+      id="about"
+      className="bg-card"
+      ref={sectionRef}
+      isIntersecting={isIntersecting}
+    >
       <div className="container mx-auto grid gap-12 md:grid-cols-2 items-center">
         <div className="space-y-4 animate-scroll">
-           <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl text-primary">
+           <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl text-secondary">
              {aboutData.title}
            </h2>
           {aboutData.paragraphs.map((paragraph, index) => (

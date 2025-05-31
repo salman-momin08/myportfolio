@@ -1,16 +1,27 @@
+
+'use client';
+
 import { skillsData } from '@/lib/data';
 import type { SkillCategory } from '@/lib/data';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { AnimatedSection } from '@/components/animated-section';
+import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 
 export function SkillsSection() {
+  const [sectionRef, isIntersecting] = useIntersectionObserver({ threshold: 0.1, triggerOnce: true });
+
   return (
-    <AnimatedSection id="skills" className="bg-background"> {/* Changed from bg-secondary to bg-background */}
+    <AnimatedSection
+      id="skills"
+      className="bg-background"
+      ref={sectionRef}
+      isIntersecting={isIntersecting}
+    >
       <div className="container mx-auto">
         <div className="heading text-center mb-12 animate-scroll">
           <small>My Abilities</small>
-          <h3>Skills</h3>
+          <h3 className="text-3xl font-bold sm:text-4xl md:text-5xl mb-4 text-secondary">Skills</h3>
         </div>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {skillsData.map((category: SkillCategory, index) => (
