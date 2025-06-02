@@ -148,7 +148,7 @@ export const projectsData: ProjectItem[] = [
     title: 'Portfolio',
     description: 'This very portfolio website, built with Next.js and Tailwind CSS to showcase my skills and projects.',
     tags: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript', 'Shadcn/ui'],
-    link: 'https://github.com/salman-momin08/Portfolio',
+    link: 'https://github.com/salman-momin08/myportfolio',
     icon: FolderKanban,
   },
 ];
@@ -208,7 +208,7 @@ export const learningData = {
   achievements: [
     {
       name: "LeetCode Profile",
-      href: "https://leetcode.com/your-leetcode-profile/",
+      href: "https://leetcode.com/u/salman_0822/",
       icon: Code,
     },
     {
