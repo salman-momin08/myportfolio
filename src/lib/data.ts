@@ -196,7 +196,7 @@ export const educationData: EducationItem[] = [
    {
     institution: 'The Oxford College of Engineering',
     degree: 'Master of Computer Application (MCA)',
-    period: '2023 - Present  (CGPA: 9.05)',
+    period: '2023 - Present  (CGPA: 9.24)',
     icon: GraduationCap,
   },
 ];
