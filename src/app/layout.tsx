@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import { Toaster } from "@/components/ui/toaster";
 import { heroData } from '@/lib/data';
 import { ThemeProvider } from '@/components/theme-provider';
+import { AnimatedBackground } from '@/components/animated-background';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -46,7 +47,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="background-lines-container">
+          <AnimatedBackground />
+          <div className="relative z-10">
             {children}
             <Toaster />
           </div>

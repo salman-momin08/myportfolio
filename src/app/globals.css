@@ -93,6 +93,12 @@
     @apply bg-background text-foreground font-inter;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+
+  /* Add dark mode background gradient */
+  .dark body {
+    background: radial-gradient(ellipse at bottom, hsl(240, 30%, 15%) 0%, hsl(260, 40%, 5%) 100%);
+  }
+
   section {
      @apply py-16 md:py-24 lg:py-32 px-4 md:px-6;
   }
@@ -194,42 +200,38 @@
       @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
   }
 
-  /* Animated background lines */
-  .background-lines-container {
-    @apply relative overflow-hidden;
+  /* Animated Shooting Stars Background */
+  .stars, .stars2, .stars3 {
+    @apply absolute top-0 left-0 right-0 bottom-0 w-full h-full block;
+    background: transparent;
+    z-index: -10;
   }
-  .background-lines-container::before,
-  .background-lines-container::after {
-    content: '';
-    @apply absolute top-0 left-0 w-full h-full pointer-events-none -z-10 opacity-[0.07];
+
+  .stars {
+    animation: animStar 50s linear infinite;
   }
-  .dark .background-lines-container::before,
-  .dark .background-lines-container::after {
-    @apply opacity-[0.04];
+  .stars2 {
+    animation: animStar 100s linear infinite;
   }
-  .background-lines-container::before {
-    background-image: 
-      linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px);
-    background-size: 60px 60px;
-    animation: move-horizontal 20s linear infinite;
+  .stars3 {
+    animation: animStar 150s linear infinite;
   }
-  .background-lines-container::after {
+
+  .dark .stars, .dark .stars2, .dark .stars3 {
     background-image:
-      linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px);
-    background-size: 60px 60px;
-    animation: move-vertical 30s linear infinite;
+      radial-gradient(1px 1px at 20px 30px, hsl(var(--primary-foreground)), transparent),
+      radial-gradient(1px 1px at 40px 70px, hsl(var(--primary)), transparent),
+      radial-gradient(1px 1px at 50px 160px, hsl(var(--accent)), transparent),
+      radial-gradient(1px 1px at 90px 40px, hsl(var(--primary-foreground)), transparent),
+      radial-gradient(1px 1px at 130px 80px, hsl(var(--accent)), transparent),
+      radial-gradient(1px 1px at 160px 120px, hsl(var(--primary)), transparent);
   }
 }
 
 /* Keyframes for Animations */
-@keyframes move-horizontal {
-  from { background-position-x: 0; }
-  to { background-position-x: 60px; }
-}
-
-@keyframes move-vertical {
-  from { background-position-y: 0; }
-  to { background-position-y: 60px; }
+@keyframes animStar {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-2000px); }
 }
 
 @keyframes floatRight {
