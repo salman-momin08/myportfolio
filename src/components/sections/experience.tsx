@@ -84,7 +84,7 @@ export function ExperienceSection() {
                          : "md:ml-4"   // Multiple items: card to the right of left-aligned timeline
                     )}>
                       <CardHeader>
-                        <CardTitle className="text-lg font-semibold text-foreground">{item.role}</CardTitle>
+                        <CardTitle className="text-lg font-semibold hero-gradient-text">{item.role}</CardTitle>
                         <CardDescription className="text-sm text-muted-foreground">
                           {item.company} | {item.period}
                         </CardDescription>

@@ -50,7 +50,7 @@ export function LearningSection() {
                 >
                   <CardHeader className="pb-4">
                     {item.icon && <item.icon className="w-10 h-10 text-primary mx-auto mb-3" />}
-                    <CardTitle className="text-lg font-semibold text-foreground">{item.name}</CardTitle>
+                    <CardTitle className="text-lg font-semibold hero-gradient-text">{item.name}</CardTitle>
                     {item.issuer && (
                       <CardDescription className="text-sm text-muted-foreground">
                         Issued by: {item.issuer}

@@ -32,7 +32,7 @@ export function SkillsSection() {
             >
               <CardHeader className="flex flex-row items-center gap-3 pb-2">
                 <category.icon className="w-6 h-6 text-primary" />
-                <CardTitle className="text-lg font-semibold text-foreground">{category.title}</CardTitle>
+                <CardTitle className="text-lg font-semibold hero-gradient-text">{category.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">

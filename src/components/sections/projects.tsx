@@ -32,7 +32,7 @@ export function ProjectsSection() {
               <CardHeader>
                  <div className="flex items-center gap-3 mb-2">
                     <project.icon className="w-6 h-6 text-primary" />
-                    <CardTitle className="text-xl font-semibold text-foreground">{project.title}</CardTitle>
+                    <CardTitle className="text-xl font-semibold hero-gradient-text">{project.title}</CardTitle>
                  </div>
                 <CardDescription className="text-muted-foreground flex-grow leading-relaxed tracking-wide break-words">{project.description}</CardDescription>
               </CardHeader>

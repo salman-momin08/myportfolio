@@ -33,7 +33,7 @@ export function EducationSection() {
                </div>
               <div>
                 <CardHeader className="p-0 pb-1">
-                  <CardTitle className="text-lg font-semibold text-foreground">{item.degree}</CardTitle>
+                  <CardTitle className="text-lg font-semibold hero-gradient-text">{item.degree}</CardTitle>
                   <CardDescription className="text-sm text-muted-foreground tracking-wide">
                     {item.institution}
                   </CardDescription>
