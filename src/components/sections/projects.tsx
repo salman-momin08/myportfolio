@@ -44,7 +44,7 @@ export function ProjectsSection() {
                   </div>
                 <div className="flex flex-wrap gap-2 mt-auto self-start">
                   {project.link && (
-                      <Button asChild variant="outline" size="sm">
+                      <Button asChild size="sm" className="c-btn-card">
                            <Link href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center">
                              <Github className="mr-2 h-4 w-4" />
                              View Code
@@ -52,7 +52,7 @@ export function ProjectsSection() {
                       </Button>
                   )}
                   {project.webLink && (
-                    <Button asChild variant="outline" size="sm">
+                    <Button asChild size="sm" className="c-btn-card">
                       <Link href={project.webLink} target="_blank" rel="noopener noreferrer" className="flex items-center">
                         <ExternalLink className="mr-2 h-4 w-4" />
                         View Live

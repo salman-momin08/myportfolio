@@ -175,6 +175,13 @@
   .c-btn:hover {
     @apply bg-gradient-to-r from-primary to-accent shadow-lg scale-105;
   }
+  
+  .c-btn-card {
+     @apply bg-gradient-to-r from-primary to-accent text-primary-foreground border-0 transition-all duration-300;
+  }
+  .c-btn-card:hover {
+     @apply shadow-lg scale-105 from-accent to-primary;
+  }
 
   #btn-back-to-top {
     @apply fixed bottom-10 right-10 hidden text-xl bg-accent text-accent-foreground p-3 rounded-full shadow-lg;

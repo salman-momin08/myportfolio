@@ -27,7 +27,7 @@ export function LearningSection() {
               <SectionIcon className="h-12 w-12 text-primary" />
             </div>
           )}
-          <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl hero-gradient-text px-1">
+          <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl hero-gradient-text pb-2 px-1">
             {title}
           </h2>
         </div>
@@ -58,7 +58,7 @@ export function LearningSection() {
                     )}
                   </CardHeader>
                   <CardContent className="mt-auto">
-                    <Button asChild variant="outline" size="sm" className="w-full">
+                    <Button asChild size="sm" className="c-btn-card w-full">
                       <Link href={item.href} target="_blank" rel="noopener noreferrer">
                         View Here
                       </Link>
