@@ -37,7 +37,7 @@ export default function RootLayout({
       <head />
       <body
         className={cn(
-          'min-h-screen bg-background font-inter antialiased', // Use Inter as base
+          'min-h-screen font-inter antialiased', // Removed bg-background
           inter.variable, // Apply Inter variable
           poppins.variable // Apply Poppins variable
         )}
