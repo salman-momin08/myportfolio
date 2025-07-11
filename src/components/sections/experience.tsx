@@ -21,7 +21,7 @@ export function ExperienceSection() {
       isIntersecting={isIntersecting}
     >
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl text-center mb-12 hero-gradient-text animate-scroll">
+        <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl text-center mb-12 hero-gradient-text animate-scroll pb-2">
           Journey
         </h2>
         <div className={cn(
@@ -60,7 +60,7 @@ export function ExperienceSection() {
                 // Mobile: timeline on the left
                 "before:absolute before:inset-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary before:to-transparent",
                 "before:ml-5",
-                // Desktop: timeline centered for single, or on the left for multiple
+                // Desktop: timeline depends on item count
                 isSingleItem ? "md:before:mx-auto md:before:ml-0" : "md:before:ml-0"
                 )}>
                 {experienceData.map((item: ExperienceItem, index) => (
@@ -76,12 +76,12 @@ export function ExperienceSection() {
 
                     <Card className={cn(
                       "relative bg-card shadow-lg max-w-lg",
-                      // Mobile positioning: to the right of the icon
+                      // Mobile positioning
                       "ml-14",
-                      // Desktop positioning:
+                      // Desktop positioning
                       isSingleItem
                          ? "md:mx-auto" // Single item: card centered under centered timeline
-                         : "md:ml-4"   // Multiple items: card 4px to the right of left-aligned timeline
+                         : "md:ml-4"   // Multiple items: card to the right of left-aligned timeline
                     )}>
                       <CardHeader>
                         <CardTitle className="text-lg font-semibold text-foreground">{item.role}</CardTitle>
