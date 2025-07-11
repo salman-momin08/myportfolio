@@ -27,7 +27,7 @@ export function SkillsSection() {
           {skillsData.map((category: SkillCategory, index) => (
             <Card
               key={index}
-              className="animate-scroll bg-card/50 shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out"
+              className="animate-scroll bg-card shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out"
               style={{ animationDelay: `${index * 150}ms` }}
             >
               <CardHeader className="flex flex-row items-center gap-3 pb-2">
