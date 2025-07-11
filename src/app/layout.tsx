@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import { Poppins, Inter } from 'next/font/google'; // Changed fonts
 import './globals.css';
