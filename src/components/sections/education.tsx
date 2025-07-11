@@ -18,7 +18,7 @@ export function EducationSection() {
       isIntersecting={isIntersecting}
     >
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl text-center mb-12 hero-gradient-text animate-scroll pb-2">
+        <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl text-center mb-12 hero-gradient-text animate-scroll pb-2 px-1">
           Education
         </h2>
         <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">

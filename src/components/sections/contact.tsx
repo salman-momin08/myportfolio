@@ -23,7 +23,7 @@ export function ContactSection() {
       <div className="container mx-auto max-w-xl">
         <div className="heading animate-scroll">
           <small>Contact</small>
-          <h3 className="text-3xl font-bold sm:text-4xl md:text-5xl mb-4 hero-gradient-text pb-2">
+          <h3 className="text-3xl font-bold sm:text-4xl md:text-5xl mb-4 hero-gradient-text pb-2 px-1">
              {contactData.title}
           </h3>
         </div>
