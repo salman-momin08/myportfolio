@@ -34,7 +34,7 @@ export function AboutSection() {
               alt="About Me Image - Replace with your portrait"
               width={400}
               height={500}
-              className="rounded-full shadow-lg object-cover aspect-square"
+              className="rounded-full shadow-lg object-cover aspect-square animate-floatVertical"
               data-ai-hint="professional portrait developer headshot"
               priority
             />
