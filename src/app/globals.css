@@ -6,101 +6,81 @@
 /* CSS Variable Definitions */
 @layer base {
   :root {
-    --background: 210 100% 98%; /* #F5F9FF (Soft bluish-white) */
-    --foreground: 0 0% 10%; /* #1A1A1A (Dark Gray/Black for main headings) */
-    --body-text-color: 210 9% 31%; /* #495057 (Softer dark gray for body) */
+    --background: 0 0% 100%; /* White */
+    --foreground: 222.2 84% 4.9%; /* Dark Blue-Gray */
 
-    --card: 0 0% 100%; /* White */
-    --card-foreground: 0 0% 10%; /* Dark Gray/Black */
+    --muted: 210 40% 96.1%; /* Light Grayish Blue */
+    --muted-foreground: 215.4 16.3% 46.9%; /* Slate Gray */
 
-    --popover: 0 0% 100%; /* White */
-    --popover-foreground: 0 0% 10%; /* Dark Gray/Black */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 197 100% 46%; /* #00A8E8 (Vibrant Sky Blue) */
-    --primary-foreground: 0 0% 100%; /* White */
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
 
-    --secondary: 169 100% 35%; /* #00C49A (Mint Green) */
-    --secondary-foreground: 0 0% 100%; /* White */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
 
-    --muted: 210 17% 93%; /* Lighter gray for muted backgrounds */
-    --muted-foreground: 210 9% 45%; /* Medium Gray for muted text */
+    --primary: 262.1 83.3% 57.8%; /* Vibrant Purple */
+    --primary-foreground: 210 40% 98%; /* Almost White */
 
-    --accent: 197 100% 46%; /* #00A8E8 (Vibrant Sky Blue - same as primary) */
-    --accent-foreground: 0 0% 100%; /* White */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --destructive: 0 72% 51%; /* Default Red */
-    --destructive-foreground: 0 0% 98%; /* Default White */
+    --accent: 346.8 77.2% 49.8%; /* Vibrant Pink/Red */
+    --accent-foreground: 210 40% 98%;
 
-    --border: 206 100% 90%; /* #CCEFFF (Light Sky Blue for borders) */
-    --input: 206 100% 90%;  /* Light Sky Blue for input borders */
-    --ring: 197 100% 46%;   /* Vibrant Sky Blue for rings */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 262.1 83.3% 57.8%;
 
     --radius: 0.5rem;
 
-    /* Chart colors */
-    --chart-1: 197 100% 46%; /* Vibrant Sky Blue */
-    --chart-2: 169 100% 35%; /* Mint Green */
-    --chart-3: 197 80% 60%; /* Lighter Sky Blue */
-    --chart-4: 169 80% 50%; /* Lighter Mint Green */
-    --chart-5: 210 10% 50%; /* Neutral Gray for charts */
-
-    /* Sidebar colors */
-    --sidebar-background: 210 10% 15%; /* Darker version of primary text for sidebar bg */
-    --sidebar-foreground: 210 20% 90%;   /* Light Gray */
-    --sidebar-primary: 197 100% 46%;    /* Vibrant Sky Blue for active items */
-    --sidebar-primary-foreground: 0 0% 100%; /* White text on Vibrant Sky Blue */
-    --sidebar-accent: 169 100% 35%;   /* Mint Green */
-    --sidebar-accent-foreground: 0 0% 100%; /* White text on Mint Green */
-    --sidebar-border: 210 10% 25%; /* Slightly lighter dark for border */
-    --sidebar-ring: 197 100% 46%;   /* Vibrant Sky Blue */
+    /* Multi-color Chart Palette */
+    --chart-1: 262 83% 58%; /* Purple */
+    --chart-2: 347 77% 50%; /* Pink */
+    --chart-3: 24 9.8% 70%; /* Orange */
+    --chart-4: 197 100% 46%; /* Sky Blue */
+    --chart-5: 169 100% 35%; /* Mint Green */
   }
 
   .dark {
-    --background: 220 13% 12%; /* Dark Slate Gray / Very Dark Blue */
-    --foreground: 210 20% 94%; /* Light Gray for main headings */
-    --body-text-color: 210 15% 75%; /* Lighter gray for body text */
+    --background: 222.2 84% 4.9%; /* Dark Blue-Gray */
+    --foreground: 210 40% 98%;   /* Almost White */
 
-    --card: 220 13% 18%; /* Slightly lighter than background */
-    --card-foreground: 210 20% 94%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-    --popover: 220 13% 15%;
-    --popover-foreground: 210 20% 94%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 197 100% 55%;    /* Brighter Sky Blue */
-    --primary-foreground: 220 20% 10%; /* Dark text on bright blue */
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
 
-    --secondary: 169 100% 45%;  /* Brighter Mint Green */
-    --secondary-foreground: 220 20% 10%; /* Dark text on bright green */
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
 
-    --muted: 220 13% 22%;    /* Darker Muted Background */
-    --muted-foreground: 210 15% 60%; /* Medium-Light Gray for Muted Text */
+    --primary: 263.4 95.2% 67.8%; /* Brighter Purple */
+    --primary-foreground: 210 40% 98%;
 
-    --accent: 197 100% 55%;   /* Brighter Sky Blue */
-    --accent-foreground: 220 20% 10%; /* Dark text on accent */
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
 
-    --destructive: 0 60% 50%;
-    --destructive-foreground: 0 0% 98%;
+    --accent: 346.8 77.2% 49.8%; /* Pink - remains vibrant */
+    --accent-foreground: 210 40% 98%;
 
-    --border: 220 13% 30%; /* Darker Border */
-    --input: 220 13% 30%;  /* Darker Input Border */
-    --ring: 197 100% 55%;   /* Brighter Sky Blue for rings */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
 
-    /* Chart colors - Dark Theme */
-    --chart-1: 197 100% 55%; /* Brighter Sky Blue */
-    --chart-2: 169 100% 45%; /* Brighter Mint Green */
-    --chart-3: 197 80% 70%;  /* Lighter Sky Blue */
-    --chart-4: 169 80% 60%;  /* Lighter Mint Green */
-    --chart-5: 210 15% 65%;   /* Light Neutral Gray */
+    --ring: 263.4 95.2% 67.8%;
 
-    /* Sidebar colors - Dark Theme */
-    --sidebar-background: 220 13% 10%; /* Even Darker Navy */
-    --sidebar-foreground: 210 20% 90%;   /* Light Gray */
-    --sidebar-primary: 197 100% 55%;    /* Brighter Sky Blue */
-    --sidebar-primary-foreground: 220 20% 10%; /* Dark Navy */
-    --sidebar-accent: 169 100% 45%;   /* Brighter Mint Green */
-    --sidebar-accent-foreground: 220 20% 10%; /* Dark Navy */
-    --sidebar-border: 220 13% 20%; /* Darker Border */
-    --sidebar-ring: 197 100% 55%;   /* Brighter Sky Blue */
+    /* Multi-color Chart Palette - Dark */
+    --chart-1: 263 95% 68%; /* Bright Purple */
+    --chart-2: 347 77% 50%; /* Pink */
+    --chart-3: 30 9.8% 80%; /* Light Orange */
+    --chart-4: 197 100% 55%; /* Bright Sky Blue */
+    --chart-5: 169 100% 45%; /* Bright Mint Green */
   }
 }
 
@@ -110,30 +90,29 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-[hsl(var(--body-text-color))] font-inter;
-    font-weight: 400;
+    @apply bg-background text-foreground font-inter;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
   section {
      @apply py-16 md:py-24 lg:py-32 px-4 md:px-6;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-poppins text-[hsl(var(--foreground))]; /* Default headings to main foreground */
+    @apply font-poppins text-foreground; /* Default headings to main foreground */
   }
-  
+
   h1 { @apply tracking-tight; }
-  h2 { @apply tracking-normal; }
-  h3 { @apply tracking-normal; }
+  h2 { @apply tracking-tight; }
+  h3 { @apply tracking-tight; }
 
   p {
-    @apply leading-relaxed tracking-wide;
+    @apply leading-relaxed tracking-wide text-muted-foreground;
   }
 
   .heading small{
     @apply text-primary text-lg font-semibold font-poppins;
   }
   .heading h3{
-    @apply mt-2 text-3xl font-bold sm:text-4xl md:text-5xl tracking-normal font-poppins text-accent;
+    @apply mt-2 text-3xl font-bold sm:text-4xl md:text-5xl tracking-normal font-poppins;
   }
 }
 
@@ -158,10 +137,6 @@
     margin-left: 2px;
     vertical-align: text-bottom;
   }
-
-  .home-img-animate {
-    animation: floatAnimationHorizontal 4s ease-in-out infinite;
-  }
   
   .animate-floatRight {
     animation: floatRight 5s ease-in-out infinite;
@@ -177,53 +152,38 @@
   }
   
   .header-nav-link {
-    @apply relative text-muted-foreground hover:text-secondary; /* Hover text color to secondary (Mint Green) */
+    @apply relative text-muted-foreground hover:text-primary;
   }
   .header-nav-link::after {
     content: '';
-    @apply absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-300 ease-out; /* Underline color accent (Sky Blue) */
+    @apply absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-300 ease-out;
     transform-origin: left;
   }
   .header-nav-link:hover::after {
     @apply w-full;
   }
   .header-nav-link.active-link {
-    @apply text-primary; /* Primary color (Sky Blue) for active link */
+    @apply text-primary;
   }
   .header-nav-link.active-link::after {
-     @apply w-full bg-primary; /* Primary color for active underline */
+     @apply w-full bg-primary;
   }
 
-  .c-btn { /* General Call-to-Action button style */
-    @apply bg-accent text-accent-foreground hover:bg-accent/90;
-  }
-
-  /* Social Links Buttons in Footer */
-  .social-links button {
-    @apply rounded-full border-none text-lg p-3.5 bg-card shadow-md transition-all duration-300 ease-in-out;
-  }
-  .social-links button:hover {
-    @apply text-accent-foreground scale-110;
-  }
-  .social-links .github-social-btn:hover {
-    background-color: #333; /* GitHub black */
-  }
-  .social-links .linkedin-social-btn:hover {
-    background-color: #0077b5; /* LinkedIn blue */
+  .c-btn {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90;
   }
 
   #btn-back-to-top {
     @apply fixed bottom-10 right-10 hidden text-xl bg-accent text-accent-foreground p-3 rounded-full shadow-lg;
     animation: pulse-subtle 2s infinite ease-in-out;
   }
+  
+  .hero-gradient-text {
+      @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-secondary;
+  }
 }
 
 /* Keyframes for Animations */
-@keyframes floatAnimationHorizontal {
-  0%, 100% { transform: translateX(0px); }
-  50% { transform: translateX(10px); }
-}
-
 @keyframes floatRight {
   0%, 100% { transform: translateX(0); }
   50% { transform: translateX(10px); }

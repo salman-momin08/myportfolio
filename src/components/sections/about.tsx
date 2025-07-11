@@ -1,4 +1,3 @@
-
 'use client';
 
 import { aboutData } from '@/lib/data';
@@ -19,7 +18,7 @@ export function AboutSection() {
     >
       <div className="container mx-auto grid gap-12 md:grid-cols-2 items-center">
         <div className="space-y-4 animate-scroll">
-           <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl text-primary">
+           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-primary">
              {aboutData.title}
            </h2>
           {aboutData.paragraphs.map((paragraph, index) => (
@@ -34,7 +33,7 @@ export function AboutSection() {
               alt="About Me Image - Replace with your portrait"
               width={400}
               height={500}
-              className="rounded-full shadow-lg object-cover aspect-square home-img-animate"
+              className="rounded-full shadow-lg object-cover aspect-square"
               data-ai-hint="professional portrait developer headshot"
               priority
             />

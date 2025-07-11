@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -23,7 +22,7 @@ export function ContactSection() {
       <div className="container mx-auto max-w-xl">
         <div className="heading animate-scroll">
           <small>Contact</small>
-          <h3 className="text-3xl font-bold sm:text-4xl md:text-5xl mb-4 text-secondary">
+          <h3 className="text-3xl font-bold sm:text-4xl md:text-5xl mb-4 text-primary">
              {contactData.title}
           </h3>
         </div>
@@ -37,9 +36,9 @@ export function ContactSection() {
                   <Mail className="mr-2 h-5 w-5" /> Email Me
                 </Link>
             </Button>
-            <div className="flex gap-4 social-links">
+            <div className="flex gap-4">
              {contactData.socialLinks.map((link: ContactLink) => (
-                <Button key={link.name} asChild variant="ghost" size="icon" className={cn('rounded-full hover:text-white', link.name === 'GitHub' ? 'hover:bg-black' : 'hover:bg-blue-600')}>
+                <Button key={link.name} asChild variant="outline" size="icon" className="rounded-full">
                     <Link href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.name} className="flex items-center justify-center">
                         <link.icon className="h-5 w-5" />
                     </Link>
