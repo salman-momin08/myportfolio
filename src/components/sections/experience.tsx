@@ -52,36 +52,31 @@ export function ExperienceSection() {
 
           {/* Timeline/Cards Column */}
           <div className={cn(
-             "md:col-span-1",
-             !isSingleItem && "md:pr-8 lg:pr-12"
+             isSingleItem ? "md:col-span-2" : "md:col-span-1 md:pr-8 lg:pr-12"
           )}>
             {experienceData.length > 0 ? (
               <div className={cn(
                 "relative space-y-12",
+                // Mobile: timeline on the left
                 "before:absolute before:inset-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary before:to-transparent",
-                "before:ml-5", // Mobile: timeline on the left
-                isSingleItem ? "md:before:mx-auto md:before:ml-0" : "md:before:ml-0" // Desktop: timeline centered for single, left for multiple
+                "before:ml-5",
+                // Desktop: timeline centered for single, or on the left for multiple
+                isSingleItem ? "md:before:mx-auto md:before:ml-0" : "md:before:ml-0"
                 )}>
                 {experienceData.map((item: ExperienceItem, index) => (
                   <div
                     key={index}
-                    className={cn(
-                      "relative animate-scroll"
-                    )}
+                    className="relative animate-scroll"
                     style={{ animationDelay: `${(index * 150) + 200}ms` }}
                   >
                     {/* Icon Container: Visible only on mobile */}
-                    <div className={cn(
-                      "absolute top-1/2 -translate-y-1/2 h-6 w-6 flex items-center justify-center rounded-full shadow-md z-10 md:hidden",
-                      "bg-primary",
-                      "left-5 -ml-px", // Mobile: Icon on the left
-                    )}>
+                    <div className="absolute top-1/2 -translate-y-1/2 h-6 w-6 flex items-center justify-center rounded-full shadow-md z-10 bg-primary left-5 -ml-px md:hidden">
                       <item.icon className="w-4 h-4 text-primary-foreground" />
                     </div>
 
                     <Card className={cn(
                       "relative bg-card shadow-lg max-w-lg",
-                      // Mobile positioning:
+                      // Mobile positioning: to the right of the icon
                       "ml-14",
                       // Desktop positioning:
                       isSingleItem

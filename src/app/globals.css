@@ -170,7 +170,10 @@
   }
 
   .c-btn {
-    @apply bg-primary text-primary-foreground hover:bg-primary/90;
+    @apply bg-primary text-primary-foreground transition-all duration-300;
+  }
+  .c-btn:hover {
+    @apply bg-gradient-to-r from-primary to-accent shadow-lg scale-105;
   }
 
   #btn-back-to-top {
@@ -179,7 +182,7 @@
   }
   
   .hero-gradient-text {
-      @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-secondary;
+      @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
   }
 }
 
