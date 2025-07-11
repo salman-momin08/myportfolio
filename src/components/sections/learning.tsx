@@ -58,7 +58,7 @@ export function LearningSection() {
                     )}
                   </CardHeader>
                   <CardContent className="mt-auto">
-                    <Button asChild size="sm" className="c-btn-card w-full">
+                    <Button asChild size="sm" variant="outline" className="c-btn-card w-full transition-all duration-300">
                       <Link href={item.href} target="_blank" rel="noopener noreferrer">
                         View Here
                       </Link>

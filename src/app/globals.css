@@ -180,11 +180,8 @@
     @apply bg-gradient-to-r from-primary to-accent shadow-lg scale-105;
   }
   
-  .c-btn-card {
-     @apply bg-gradient-to-r from-primary to-accent text-primary-foreground border-0 transition-all duration-300;
-  }
   .c-btn-card:hover {
-     @apply shadow-lg scale-105 from-accent to-primary;
+     @apply bg-gradient-to-r from-primary to-accent text-primary-foreground border-transparent shadow-lg scale-105;
   }
 
   #btn-back-to-top {
