@@ -46,8 +46,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
-          <Toaster />
+          <div className="background-lines-container">
+            {children}
+            <Toaster />
+          </div>
         </ThemeProvider>
       </body>
     </html>

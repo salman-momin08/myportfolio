@@ -180,8 +180,9 @@
     @apply bg-gradient-to-r from-primary to-accent shadow-lg scale-105;
   }
   
-  .c-btn-card:hover {
-     @apply bg-gradient-to-r from-primary to-accent text-primary-foreground border-transparent shadow-lg scale-105;
+  .c-btn-card {
+    @apply border border-input bg-transparent transition-all duration-300 ease-in-out;
+    @apply hover:bg-gradient-to-r hover:from-primary hover:to-accent hover:text-primary-foreground hover:border-transparent hover:shadow-lg hover:scale-105;
   }
 
   #btn-back-to-top {
@@ -192,9 +193,45 @@
   .hero-gradient-text {
       @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
   }
+
+  /* Animated background lines */
+  .background-lines-container {
+    @apply relative overflow-hidden;
+  }
+  .background-lines-container::before,
+  .background-lines-container::after {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-full pointer-events-none -z-10 opacity-[0.07];
+  }
+  .dark .background-lines-container::before,
+  .dark .background-lines-container::after {
+    @apply opacity-[0.04];
+  }
+  .background-lines-container::before {
+    background-image: 
+      linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: move-horizontal 20s linear infinite;
+  }
+  .background-lines-container::after {
+    background-image:
+      linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: move-vertical 30s linear infinite;
+  }
 }
 
 /* Keyframes for Animations */
+@keyframes move-horizontal {
+  from { background-position-x: 0; }
+  to { background-position-x: 60px; }
+}
+
+@keyframes move-vertical {
+  from { background-position-y: 0; }
+  to { background-position-y: 60px; }
+}
+
 @keyframes floatRight {
   0%, 100% { transform: translateX(0); }
   50% { transform: translateX(10px); }
