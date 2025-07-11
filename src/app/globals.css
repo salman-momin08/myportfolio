@@ -91,7 +91,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply text-foreground font-inter; /* Removed bg-background */
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
