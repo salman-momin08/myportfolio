@@ -23,7 +23,7 @@ export function ProjectsSection() {
       isIntersecting={isIntersecting}
     >
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl text-center mb-12 text-primary animate-scroll">
+        <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl text-center mb-12 hero-gradient-text animate-scroll">
           Projects
         </h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

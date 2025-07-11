@@ -21,8 +21,8 @@ export function ExperienceSection() {
       isIntersecting={isIntersecting}
     >
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl text-center mb-12 text-primary animate-scroll">
-          Journey So Far
+        <h2 className="text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl text-center mb-12 hero-gradient-text animate-scroll">
+          Journey
         </h2>
         <div className={cn(
           "items-start md:grid md:gap-x-12",
@@ -70,12 +70,11 @@ export function ExperienceSection() {
                     )}
                     style={{ animationDelay: `${(index * 150) + 200}ms` }}
                   >
-                    {/* Icon Container: Visible on mobile, hidden on desktop */}
+                    {/* Icon Container: Visible only on mobile */}
                     <div className={cn(
-                      "absolute top-1/2 -translate-y-1/2 h-6 w-6 flex items-center justify-center rounded-full shadow-md z-10",
+                      "absolute top-1/2 -translate-y-1/2 h-6 w-6 flex items-center justify-center rounded-full shadow-md z-10 md:hidden",
                       "bg-primary",
                       "left-5 -ml-px", // Mobile: Icon on the left
-                      "md:hidden" // Hide on desktop
                     )}>
                       <item.icon className="w-4 h-4 text-primary-foreground" />
                     </div>
@@ -83,7 +82,7 @@ export function ExperienceSection() {
                     <Card className={cn(
                       "relative bg-card shadow-lg max-w-lg",
                       // Mobile positioning:
-                      "ml-14", // Give space for the icon on mobile (icon is left-5, w-6. Card starts after icon)
+                      "ml-14",
                       // Desktop positioning:
                       isSingleItem
                          ? "md:mx-auto" // Single item: card centered under centered timeline

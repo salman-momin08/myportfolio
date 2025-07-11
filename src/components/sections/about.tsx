@@ -18,7 +18,7 @@ export function AboutSection() {
     >
       <div className="container mx-auto grid gap-12 md:grid-cols-2 items-center">
         <div className="space-y-4 animate-scroll">
-           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-primary">
+           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl hero-gradient-text">
              {aboutData.title}
            </h2>
           {aboutData.paragraphs.map((paragraph, index) => (
