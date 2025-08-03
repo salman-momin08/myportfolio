@@ -212,6 +212,12 @@ export const learningData = {
       icon: Code,
     },
     {
+      name: "Google Cloud Skills Boost",
+      href: "https://www.cloudskillsboost.google/public_profiles/9d8c4976-0a3d-49e3-8ee2-8bdc82e36a32",
+      issuer: "Google Cloud",
+      icon: Award,
+    },
+    {
       name: "Python Crash Course Certificate",
       href: "https://drive.google.com/file/d/1jE--sHyw6NNpHP3VOAqTodpr5chhd71b/view?usp=drive_lin",
       issuer: "Coursera",
