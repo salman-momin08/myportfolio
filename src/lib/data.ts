@@ -1,6 +1,6 @@
 
 import type { LucideIcon } from 'lucide-react';
-import { Github, Linkedin, Mail, Briefcase, GraduationCap, Wrench, FolderKanban, Code, Target, ExternalLink, Brain, Award } from 'lucide-react';
+import { Github, Linkedin, Mail, Briefcase, GraduationCap, Wrench, FolderKanban, Code, Target, ExternalLink, Brain, Award, User, Cloud, BookOpen, Puzzle, Terminal, Laptop, Laptop2, Laptop2Icon } from 'lucide-react';
 
 export interface NavItem {
   name: string;
@@ -44,6 +44,7 @@ export interface SkillCategory {
 }
 
 export interface AchievementItem {
+  profile: any;
   name: string;
   href: string;
   issuer?: string;
@@ -209,13 +210,13 @@ export const learningData = {
     {
       name: "LeetCode Profile",
       href: "https://leetcode.com/u/salman_0822/",
-      icon: Code,
+      profile: "LeetCode",
+      icon: Laptop2Icon,
     },
     {
-      name: "Google Cloud Skills Boost",
+      name: "Google Cloud Skills Boost Profile",
       href: "https://www.cloudskillsboost.google/public_profiles/9d8c4976-0a3d-49e3-8ee2-8bdc82e36a32",
-      issuer: "Google Cloud",
-      icon: Award,
+      icon: Cloud,
     },
     {
       name: "Python Crash Course Certificate",
