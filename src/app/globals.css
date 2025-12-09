@@ -91,7 +91,7 @@
     @apply border-border;
   }
   body {
-    @apply text-foreground font-inter; /* Removed bg-background */
+    @apply text-foreground font-inter;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
@@ -200,41 +200,9 @@
   .hero-gradient-text {
       @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
   }
-
-  /* Animated Shooting Stars Background */
-  .stars, .stars2, .stars3 {
-    @apply absolute top-0 left-0 right-0 bottom-0 w-full h-full block;
-    background: transparent;
-    z-index: -10;
-  }
-
-  .stars {
-    animation: animStar 50s linear infinite;
-  }
-  .stars2 {
-    animation: animStar 100s linear infinite;
-  }
-  .stars3 {
-    animation: animStar 150s linear infinite;
-  }
-
-  .dark .stars, .dark .stars2, .dark .stars3 {
-    background-image:
-      radial-gradient(1px 1px at 20px 30px, hsl(var(--primary-foreground)), transparent),
-      radial-gradient(1px 1px at 40px 70px, hsl(var(--primary)), transparent),
-      radial-gradient(1px 1px at 50px 160px, hsl(var(--accent)), transparent),
-      radial-gradient(1px 1px at 90px 40px, hsl(var(--primary-foreground)), transparent),
-      radial-gradient(1px 1px at 130px 80px, hsl(var(--accent)), transparent),
-      radial-gradient(1px 1px at 160px 120px, hsl(var(--primary)), transparent);
-  }
 }
 
 /* Keyframes for Animations */
-@keyframes animStar {
-  from { transform: translateY(0px); }
-  to { transform: translateY(-2000px); }
-}
-
 @keyframes floatRight {
   0%, 100% { transform: translateX(0); }
   50% { transform: translateX(10px); }

@@ -92,6 +92,24 @@ export const experienceData: ExperienceItem[] = [
     icon: Target,
   },
   {
+    company: 'PM Accelerator US(Remote)',
+    role: 'AI Software Engineer Intern',
+    period: 'Jun 2025 - Nov 2025',
+    description: [
+      'VibeTrail – AI Event Planner (Next.js, TypeScript, Tailwind, ShadCN)',
+      'Engineered a multi-step event planning workflow, boosting user navigation efficiency by 35%.',
+      'Designed and implemented a drag-and-drop storyboard (VibeBoard), enhancing interaction smoothness by 40%.',
+      'Developed authentication modals and integrated global state management with Zustand, reducing UI state errors by 25%.',
+      'Integrated Genkit setup, enabling 60% readiness for AI-powered features.',
+      'Practicely – AI Interview App (Next.js, TypeScript, ShadCN)',
+      'Architected a full UI layout with sidebar, header, and App Router, increasing component reuse by 50%.',
+      'Designed and deployed a complete interview flow, improving journey clarity by 45%.',
+      'Implemented RHF + Zod validation, reducing form errors by 70%.',
+      'Built history and feedback pages, achieving 80% readiness for AI-driven insights.',
+    ],
+    icon : Briefcase,
+  },
+  {
     company: 'Leosias Technologies',
     role: 'Data Analyst Intern',
     period: 'Nov 2024 - Jan 2025',
@@ -187,16 +205,16 @@ export const skillsData: SkillCategory[] = [
 ];
 
 export const educationData: EducationItem[] = [
-   {
-    institution: 'KLE SOCIETYS COLLEGE OF BCA GOKAK',
-    degree: 'Bachelor of Computer Application (BCA)',
-    period: '2020 - 2023  (CGPA: 8.92)',
+  {
+    institution: 'The Oxford College of Engineering',
+    degree: 'Master of Computer Application (MCA)',
+    period: '2023 - 2025  (CGPA: 9.55)',
     icon: GraduationCap,
   },
    {
-    institution: 'The Oxford College of Engineering',
-    degree: 'Master of Computer Application (MCA)',
-    period: '2023 - Present  (CGPA: 9.24)',
+    institution: 'KLE SOCIETYS COLLEGE OF BCA GOKAK',
+    degree: 'Bachelor of Computer Application (BCA)',
+    period: '2020 - 2023  (CGPA: 8.91)',
     icon: GraduationCap,
   },
 ];
